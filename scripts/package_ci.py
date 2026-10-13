@@ -23,6 +23,7 @@ with tarfile.open(source,'w:gz',dereference=True) as archive:
     path=Path(folder)/file
     if path.exists() and file!='.git':archive.add(path,arcname=path.relative_to(r),recursive=False)
 manifest={'name':'Onyx Wild Performance','status':'experimental; hardware boot testing pending',
+ 'module_crc_mismatch_policy':'warn and accept, matching gki-clo',
  'kernel_release':(out/'include/config/kernel.release').read_text().strip(),
  'built_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
  'compiler':subprocess.check_output(['clang-21','--version'],text=True).splitlines()[0],

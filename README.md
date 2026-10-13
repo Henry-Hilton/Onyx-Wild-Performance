@@ -89,7 +89,11 @@ The installer checks for onyx and replaces the current slot's boot kernel,
 retaining the installed ROM's ramdisk and device trees. It does not replace
 vendor or system modules. Stock 250 Hz, CFI, KASAN exports and vendor-visible
 debug interfaces are retained for module compatibility; KASAN is requested
-off at runtime. Module CRC checks remain enabled. The configuration disables
+off at runtime. Symbol CRC mismatches are accepted at runtime, matching
+gki-clo's `check_version()` bypass, and a warning is logged. This also applies
+to the `module_layout` CRC. CI still requires the supplied ABI baseline to match.
+Missing symbols, other vermagic differences and other loader errors can still
+prevent a module from loading. The configuration disables
 GKI protected-export restrictions to permit the ROM's existing vendor modules.
 
 ## Validation limits
@@ -101,8 +105,9 @@ change the module ABI even while continuing to use Linux 6.6.
 The default target is current ROM releases, with compatibility taking priority.
 A single ZIP cannot promise compatibility with every future firmware update;
 new module interfaces must be checked before rebuilding for those releases.
-The two deprecated references bypass module version checks; that behavior
-does not demonstrate matching interfaces and is not copied into this build.
+The gki-clo CRC bypass is now included at the user's request. It cannot guarantee
+boot on every ROM: incompatible layouts or function interfaces can still crash
+after a module loads. Accepting a CRC mismatch does not prove compatibility.
 
 Aggressive filesystem tuning includes a 30-second ext4 journal commit
 interval instead of five seconds, which extends the window for losing recent

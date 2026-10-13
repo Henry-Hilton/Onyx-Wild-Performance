@@ -32,6 +32,7 @@ manifest={
  'configuration_differences':feature_report['missing'],
  'device_testing':{'HyperOS':'not tested','AOSP':'not tested'},
  'source_tree_modified':True,
+ 'module_crc_mismatch_policy':'warn and accept, matching gki-clo',
  'source_archive':'Onyx-Wild-Performance-source.tar.gz',
  'source_archive_sha256':hashlib.sha256((dist/'Onyx-Wild-Performance-source.tar.gz').read_bytes()).hexdigest(),
  'layout_validation':{'structure_count':len(layouts['structures']),'mismatches':layouts['mismatches']},

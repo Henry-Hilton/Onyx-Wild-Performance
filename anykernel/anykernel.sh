@@ -24,6 +24,7 @@ no_magisk_check=1
 . tools/ak3-core.sh
 
 ui_print "Onyx Wild Performance: experimental device-validation build"
+ui_print "Module symbol CRC mismatch bypass enabled (gki-clo behavior)"
 ui_print "Preserving installed ROM ramdisk, bootconfig and device trees"
 split_boot
 if [ -f "$SPLITIMG/ramdisk.cpio" ]; then
