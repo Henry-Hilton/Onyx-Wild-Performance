@@ -1,0 +1,8 @@
+wildkernels/
+dist/
+__pycache__/
+device-modules/
+build-pass*.log
+source-export.log
+.build/
+ci-*.log

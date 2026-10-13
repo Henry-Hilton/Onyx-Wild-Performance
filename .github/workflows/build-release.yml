@@ -1,0 +1,58 @@
+name: Build and release kernel
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install LLVM 21 and build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y software-properties-common wget gnupg build-essential bc bison flex libssl-dev libelf-dev dwarves zstd lz4 python3-pyelftools python3-yaml
+          wget -q https://apt.llvm.org/llvm.sh
+          sudo bash llvm.sh 21
+          sudo apt-get install -y llvm-21 clang-21 lld-21
+          sudo fallocate -l 4G /mnt/onyx.swap
+          sudo chmod 600 /mnt/onyx.swap
+          sudo mkswap /mnt/onyx.swap
+          sudo swapon /mnt/onyx.swap
+      - name: Build, validate ABI and package
+        run: bash scripts/ci_build.sh
+        env:
+          JOBS: 2
+      - name: Upload validated build
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: onyx-kernel-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 14
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: onyx-kernel-${{ github.run_id }}-${{ github.run_attempt }}
+          path: dist
+      - name: Publish successful build as a prerelease
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          COMMIT: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          tag="build-${RUN_ID}-${RUN_ATTEMPT}"
+          printf 'Automated validated kernel build from commit %s.\n\nCompilation, module CRC/export checks, structure layout checks and package integrity passed. Hardware boot testing on HyperOS and AOSP remains pending.\n' "$COMMIT" > release-notes.md
+          gh release create "$tag" dist/* --target "$COMMIT" --title "Onyx experimental build ${RUN_ID}.${RUN_ATTEMPT}" --notes-file release-notes.md --prerelease

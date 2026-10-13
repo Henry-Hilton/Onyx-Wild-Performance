@@ -1,0 +1,4817 @@
+{
+  "inode": {
+    "size_bytes": 704,
+    "fields": {
+      "i_mode": {
+        "offset_bits": 0,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "i_opflags": {
+        "offset_bits": 16,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "i_uid": {
+        "offset_bits": 32,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_gid": {
+        "offset_bits": 64,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_flags": {
+        "offset_bits": 96,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_acl": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_default_acl": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_op": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_sb": {
+        "offset_bits": 320,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_mapping": {
+        "offset_bits": 384,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_security": {
+        "offset_bits": 448,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_ino": {
+        "offset_bits": 512,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_nlink": {
+        "offset_bits": 576,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "__i_nlink": {
+        "offset_bits": 576,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_rdev": {
+        "offset_bits": 608,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_size": {
+        "offset_bits": 640,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_atime": {
+        "offset_bits": 704,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_mtime": {
+        "offset_bits": 832,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "__i_ctime": {
+        "offset_bits": 960,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_lock": {
+        "offset_bits": 1088,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_bytes": {
+        "offset_bits": 1120,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "i_blkbits": {
+        "offset_bits": 1136,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "i_write_hint": {
+        "offset_bits": 1144,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "i_blocks": {
+        "offset_bits": 1152,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_state": {
+        "offset_bits": 1216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_rwsem": {
+        "offset_bits": 1280,
+        "size_bytes": 64,
+        "bitfield_width": 0
+      },
+      "dirtied_when": {
+        "offset_bits": 1792,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dirtied_time_when": {
+        "offset_bits": 1856,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_hash": {
+        "offset_bits": 1920,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_io_list": {
+        "offset_bits": 2048,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_wb": {
+        "offset_bits": 2176,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_wb_frn_winner": {
+        "offset_bits": 2240,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_wb_frn_avg_time": {
+        "offset_bits": 2272,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "i_wb_frn_history": {
+        "offset_bits": 2288,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "i_lru": {
+        "offset_bits": 2304,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_sb_list": {
+        "offset_bits": 2432,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_wb_list": {
+        "offset_bits": 2560,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_dentry": {
+        "offset_bits": 2688,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_rcu": {
+        "offset_bits": 2688,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_version": {
+        "offset_bits": 2816,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_sequence": {
+        "offset_bits": 2880,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_count": {
+        "offset_bits": 2944,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_dio_count": {
+        "offset_bits": 2976,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_writecount": {
+        "offset_bits": 3008,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_readcount": {
+        "offset_bits": 3040,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_fop": {
+        "offset_bits": 3072,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "free_inode": {
+        "offset_bits": 3072,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_flctx": {
+        "offset_bits": 3136,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_data": {
+        "offset_bits": 3200,
+        "size_bytes": 240,
+        "bitfield_width": 0
+      },
+      "i_devices": {
+        "offset_bits": 5120,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "i_pipe": {
+        "offset_bits": 5248,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_cdev": {
+        "offset_bits": 5248,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_link": {
+        "offset_bits": 5248,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_dir_seq": {
+        "offset_bits": 5248,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_generation": {
+        "offset_bits": 5312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_fsnotify_mask": {
+        "offset_bits": 5344,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "i_fsnotify_marks": {
+        "offset_bits": 5376,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_crypt_info": {
+        "offset_bits": 5440,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_verity_info": {
+        "offset_bits": 5504,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "i_private": {
+        "offset_bits": 5568,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "file": {
+    "size_bytes": 264,
+    "fields": {
+      "f_llist": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_rcuhead": {
+        "offset_bits": 0,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "f_iocb_flags": {
+        "offset_bits": 0,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "f_lock": {
+        "offset_bits": 128,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "f_mode": {
+        "offset_bits": 160,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "f_count": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_pos_lock": {
+        "offset_bits": 256,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "f_pos": {
+        "offset_bits": 640,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_flags": {
+        "offset_bits": 704,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "f_owner": {
+        "offset_bits": 768,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "f_cred": {
+        "offset_bits": 1024,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_ra": {
+        "offset_bits": 1088,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "f_path": {
+        "offset_bits": 1344,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "f_inode": {
+        "offset_bits": 1472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_op": {
+        "offset_bits": 1536,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_version": {
+        "offset_bits": 1600,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_security": {
+        "offset_bits": 1664,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "private_data": {
+        "offset_bits": 1728,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_ep": {
+        "offset_bits": 1792,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_mapping": {
+        "offset_bits": 1856,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "f_wb_err": {
+        "offset_bits": 1920,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "f_sb_err": {
+        "offset_bits": 1952,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 1984,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved2": {
+        "offset_bits": 2048,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "task_struct": {
+    "size_bytes": 4800,
+    "fields": {
+      "thread_info": {
+        "offset_bits": 0,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "__state": {
+        "offset_bits": 384,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "saved_state": {
+        "offset_bits": 416,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "stack": {
+        "offset_bits": 448,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "usage": {
+        "offset_bits": 512,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "flags": {
+        "offset_bits": 544,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "ptrace": {
+        "offset_bits": 576,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "on_cpu": {
+        "offset_bits": 608,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "wake_entry": {
+        "offset_bits": 640,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "wakee_flips": {
+        "offset_bits": 768,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "wakee_flip_decay_ts": {
+        "offset_bits": 832,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "last_wakee": {
+        "offset_bits": 896,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "recent_used_cpu": {
+        "offset_bits": 960,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "wake_cpu": {
+        "offset_bits": 992,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "on_rq": {
+        "offset_bits": 1024,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prio": {
+        "offset_bits": 1056,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "static_prio": {
+        "offset_bits": 1088,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "normal_prio": {
+        "offset_bits": 1120,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rt_priority": {
+        "offset_bits": 1152,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "se": {
+        "offset_bits": 1536,
+        "size_bytes": 320,
+        "bitfield_width": 0
+      },
+      "rt": {
+        "offset_bits": 4096,
+        "size_bytes": 80,
+        "bitfield_width": 0
+      },
+      "dl": {
+        "offset_bits": 4736,
+        "size_bytes": 240,
+        "bitfield_width": 0
+      },
+      "sched_class": {
+        "offset_bits": 6656,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sched_task_group": {
+        "offset_bits": 6720,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "uclamp_req": {
+        "offset_bits": 6784,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "uclamp": {
+        "offset_bits": 6848,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "stats": {
+        "offset_bits": 7168,
+        "size_bytes": 256,
+        "bitfield_width": 0
+      },
+      "preempt_notifiers": {
+        "offset_bits": 9216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "policy": {
+        "offset_bits": 9280,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "nr_cpus_allowed": {
+        "offset_bits": 9312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cpus_ptr": {
+        "offset_bits": 9344,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "user_cpus_ptr": {
+        "offset_bits": 9408,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cpus_mask": {
+        "offset_bits": 9472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "migration_pending": {
+        "offset_bits": 9536,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "migration_disabled": {
+        "offset_bits": 9600,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "migration_flags": {
+        "offset_bits": 9616,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "rcu_read_lock_nesting": {
+        "offset_bits": 9632,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcu_read_unlock_special": {
+        "offset_bits": 9664,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcu_node_entry": {
+        "offset_bits": 9728,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "rcu_blocked_node": {
+        "offset_bits": 9856,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rcu_tasks_nvcsw": {
+        "offset_bits": 9920,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rcu_tasks_holdout": {
+        "offset_bits": 9984,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "rcu_tasks_idx": {
+        "offset_bits": 9992,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "rcu_tasks_idle_cpu": {
+        "offset_bits": 10016,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcu_tasks_holdout_list": {
+        "offset_bits": 10048,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "trc_reader_nesting": {
+        "offset_bits": 10176,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "trc_ipi_to_cpu": {
+        "offset_bits": 10208,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "trc_reader_special": {
+        "offset_bits": 10240,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "trc_holdout_list": {
+        "offset_bits": 10304,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "trc_blkd_node": {
+        "offset_bits": 10432,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "trc_blkd_cpu": {
+        "offset_bits": 10560,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sched_info": {
+        "offset_bits": 10624,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "tasks": {
+        "offset_bits": 10880,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "pushable_tasks": {
+        "offset_bits": 11008,
+        "size_bytes": 40,
+        "bitfield_width": 0
+      },
+      "pushable_dl_tasks": {
+        "offset_bits": 11328,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "mm": {
+        "offset_bits": 11520,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "active_mm": {
+        "offset_bits": 11584,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "exit_state": {
+        "offset_bits": 11648,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "exit_code": {
+        "offset_bits": 11680,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "exit_signal": {
+        "offset_bits": 11712,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pdeath_signal": {
+        "offset_bits": 11744,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "jobctl": {
+        "offset_bits": 11776,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "personality": {
+        "offset_bits": 11840,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sched_reset_on_fork": {
+        "offset_bits": 11872,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "sched_contributes_to_load": {
+        "offset_bits": 11873,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "sched_migrated": {
+        "offset_bits": 11874,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "sched_remote_wakeup": {
+        "offset_bits": 11904,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_execve": {
+        "offset_bits": 11905,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_iowait": {
+        "offset_bits": 11906,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_user_fault": {
+        "offset_bits": 11907,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_lru_fault": {
+        "offset_bits": 11908,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "no_cgroup_migration": {
+        "offset_bits": 11909,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "frozen": {
+        "offset_bits": 11910,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "use_memdelay": {
+        "offset_bits": 11911,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_memstall": {
+        "offset_bits": 11912,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_page_owner": {
+        "offset_bits": 11913,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_eventfd": {
+        "offset_bits": 11914,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "in_thrashing": {
+        "offset_bits": 11915,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "atomic_flags": {
+        "offset_bits": 11968,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "restart_block": {
+        "offset_bits": 12032,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "pid": {
+        "offset_bits": 12480,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tgid": {
+        "offset_bits": 12512,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "stack_canary": {
+        "offset_bits": 12544,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "real_parent": {
+        "offset_bits": 12608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "parent": {
+        "offset_bits": 12672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "children": {
+        "offset_bits": 12736,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "sibling": {
+        "offset_bits": 12864,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "group_leader": {
+        "offset_bits": 12992,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ptraced": {
+        "offset_bits": 13056,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "ptrace_entry": {
+        "offset_bits": 13184,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "thread_pid": {
+        "offset_bits": 13312,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pid_links": {
+        "offset_bits": 13376,
+        "size_bytes": 64,
+        "bitfield_width": 0
+      },
+      "thread_group": {
+        "offset_bits": 13888,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "thread_node": {
+        "offset_bits": 14016,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "vfork_done": {
+        "offset_bits": 14144,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "set_child_tid": {
+        "offset_bits": 14208,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "clear_child_tid": {
+        "offset_bits": 14272,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "worker_private": {
+        "offset_bits": 14336,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "utime": {
+        "offset_bits": 14400,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "stime": {
+        "offset_bits": 14464,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "gtime": {
+        "offset_bits": 14528,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "time_in_state": {
+        "offset_bits": 14592,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "max_state": {
+        "offset_bits": 14656,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prev_cputime": {
+        "offset_bits": 14720,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "nvcsw": {
+        "offset_bits": 14912,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nivcsw": {
+        "offset_bits": 14976,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "start_time": {
+        "offset_bits": 15040,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "start_boottime": {
+        "offset_bits": 15104,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "min_flt": {
+        "offset_bits": 15168,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "maj_flt": {
+        "offset_bits": 15232,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "posix_cputimers": {
+        "offset_bits": 15296,
+        "size_bytes": 80,
+        "bitfield_width": 0
+      },
+      "posix_cputimers_work": {
+        "offset_bits": 15936,
+        "size_bytes": 72,
+        "bitfield_width": 0
+      },
+      "ptracer_cred": {
+        "offset_bits": 16512,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "real_cred": {
+        "offset_bits": 16576,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cred": {
+        "offset_bits": 16640,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cached_requested_key": {
+        "offset_bits": 16704,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "comm": {
+        "offset_bits": 16768,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "nameidata": {
+        "offset_bits": 16896,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "last_switch_count": {
+        "offset_bits": 16960,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "last_switch_time": {
+        "offset_bits": 17024,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "fs": {
+        "offset_bits": 17088,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "files": {
+        "offset_bits": 17152,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "io_uring": {
+        "offset_bits": 17216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nsproxy": {
+        "offset_bits": 17280,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "signal": {
+        "offset_bits": 17344,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sighand": {
+        "offset_bits": 17408,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "blocked": {
+        "offset_bits": 17472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "real_blocked": {
+        "offset_bits": 17536,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "saved_sigmask": {
+        "offset_bits": 17600,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pending": {
+        "offset_bits": 17664,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "sas_ss_sp": {
+        "offset_bits": 17856,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sas_ss_size": {
+        "offset_bits": 17920,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sas_ss_flags": {
+        "offset_bits": 17984,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "task_works": {
+        "offset_bits": 18048,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "audit_context": {
+        "offset_bits": 18112,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "loginuid": {
+        "offset_bits": 18176,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sessionid": {
+        "offset_bits": 18208,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "seccomp": {
+        "offset_bits": 18240,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "syscall_dispatch": {
+        "offset_bits": 18368,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "parent_exec_id": {
+        "offset_bits": 18368,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "self_exec_id": {
+        "offset_bits": 18432,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "alloc_lock": {
+        "offset_bits": 18496,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pi_lock": {
+        "offset_bits": 18528,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "wake_q": {
+        "offset_bits": 18560,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "wake_q_count": {
+        "offset_bits": 18624,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pi_waiters": {
+        "offset_bits": 18688,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "pi_top_task": {
+        "offset_bits": 18816,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pi_blocked_on": {
+        "offset_bits": 18880,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "journal_info": {
+        "offset_bits": 18944,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "bio_list": {
+        "offset_bits": 19008,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "plug": {
+        "offset_bits": 19072,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "reclaim_state": {
+        "offset_bits": 19136,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "io_context": {
+        "offset_bits": 19200,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "capture_control": {
+        "offset_bits": 19264,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ptrace_message": {
+        "offset_bits": 19328,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "last_siginfo": {
+        "offset_bits": 19392,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ioac": {
+        "offset_bits": 19456,
+        "size_bytes": 64,
+        "bitfield_width": 0
+      },
+      "psi_flags": {
+        "offset_bits": 19968,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "acct_rss_mem1": {
+        "offset_bits": 20032,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "acct_vm_mem1": {
+        "offset_bits": 20096,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "acct_timexpd": {
+        "offset_bits": 20160,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mems_allowed": {
+        "offset_bits": 20224,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mems_allowed_seq": {
+        "offset_bits": 20288,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cpuset_mem_spread_rotor": {
+        "offset_bits": 20320,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cpuset_slab_spread_rotor": {
+        "offset_bits": 20352,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cgroups": {
+        "offset_bits": 20416,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cg_list": {
+        "offset_bits": 20480,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "robust_list": {
+        "offset_bits": 20608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "compat_robust_list": {
+        "offset_bits": 20672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pi_state_list": {
+        "offset_bits": 20736,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "pi_state_cache": {
+        "offset_bits": 20864,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "futex_exit_mutex": {
+        "offset_bits": 20928,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "futex_state": {
+        "offset_bits": 21312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "perf_event_ctxp": {
+        "offset_bits": 21376,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "perf_event_mutex": {
+        "offset_bits": 21440,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "perf_event_list": {
+        "offset_bits": 21824,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "tlb_ubc": {
+        "offset_bits": 21952,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "splice_pipe": {
+        "offset_bits": 22016,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "task_frag": {
+        "offset_bits": 22080,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "delays": {
+        "offset_bits": 22208,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nr_dirtied": {
+        "offset_bits": 22272,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "nr_dirtied_pause": {
+        "offset_bits": 22304,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "dirty_paused_when": {
+        "offset_bits": 22336,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "timer_slack_ns": {
+        "offset_bits": 22400,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "default_timer_slack_ns": {
+        "offset_bits": 22464,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "kunit_test": {
+        "offset_bits": 22528,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "trace_recursion": {
+        "offset_bits": 22592,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "memcg_in_oom": {
+        "offset_bits": 22656,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "memcg_oom_gfp_mask": {
+        "offset_bits": 22720,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "memcg_oom_order": {
+        "offset_bits": 22752,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "memcg_nr_pages_over_high": {
+        "offset_bits": 22784,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "active_memcg": {
+        "offset_bits": 22848,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "throttle_disk": {
+        "offset_bits": 22912,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "utask": {
+        "offset_bits": 22976,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "kmap_ctrl": {
+        "offset_bits": 23040,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "rcu": {
+        "offset_bits": 23040,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "rcu_users": {
+        "offset_bits": 23168,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pagefault_disabled": {
+        "offset_bits": 23200,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "oom_reaper_list": {
+        "offset_bits": 23232,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "oom_reaper_timer": {
+        "offset_bits": 23296,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "stack_vm_area": {
+        "offset_bits": 23744,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "stack_refcount": {
+        "offset_bits": 23808,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "security": {
+        "offset_bits": 23872,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "bpf_storage": {
+        "offset_bits": 23936,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "bpf_ctx": {
+        "offset_bits": 24000,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_vendor_data1": {
+        "offset_bits": 24064,
+        "size_bytes": 512,
+        "bitfield_width": 0
+      },
+      "android_oem_data1": {
+        "offset_bits": 28160,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "kretprobe_instances": {
+        "offset_bits": 28544,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dmabuf_info": {
+        "offset_bits": 28608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 28608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "user_dumpable": {
+        "offset_bits": 28672,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "android_kabi_reserved2": {
+        "offset_bits": 28672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved3": {
+        "offset_bits": 28736,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved4": {
+        "offset_bits": 28800,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved5": {
+        "offset_bits": 28864,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved6": {
+        "offset_bits": 28928,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved7": {
+        "offset_bits": 28992,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved8": {
+        "offset_bits": 29056,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "thread": {
+        "offset_bits": 29184,
+        "size_bytes": 1120,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "page": {
+    "size_bytes": 64,
+    "fields": {
+      "flags": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "lru": {
+        "offset_bits": 64,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "__filler": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mlock_count": {
+        "offset_bits": 128,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "buddy_list": {
+        "offset_bits": 64,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "pcp_list": {
+        "offset_bits": 64,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "mapping": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "index": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "share": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "private": {
+        "offset_bits": 320,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pp_magic": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pp": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "_pp_mapping_pad": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dma_addr": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dma_addr_upper": {
+        "offset_bits": 320,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pp_frag_count": {
+        "offset_bits": 320,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "compound_head": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "pgmap": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "zone_device_data": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "callback_head": {
+        "offset_bits": 64,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "_mapcount": {
+        "offset_bits": 384,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "page_type": {
+        "offset_bits": 384,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "_refcount": {
+        "offset_bits": 416,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "memcg_data": {
+        "offset_bits": 448,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "sk_buff": {
+    "size_bytes": 240,
+    "fields": {
+      "next": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "prev": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dev": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dev_scratch": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rbnode": {
+        "offset_bits": 0,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "list": {
+        "offset_bits": 0,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "ll_node": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tstamp": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "skb_mstamp_ns": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cb": {
+        "offset_bits": 320,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "_skb_refdst": {
+        "offset_bits": 704,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "destructor": {
+        "offset_bits": 768,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcp_tsorted_anchor": {
+        "offset_bits": 704,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "_sk_redir": {
+        "offset_bits": 704,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "_nfct": {
+        "offset_bits": 832,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "len": {
+        "offset_bits": 896,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "data_len": {
+        "offset_bits": 928,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mac_len": {
+        "offset_bits": 960,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "hdr_len": {
+        "offset_bits": 976,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "queue_mapping": {
+        "offset_bits": 992,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "__cloned_offset": {
+        "offset_bits": 1008,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "cloned": {
+        "offset_bits": 1008,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "nohdr": {
+        "offset_bits": 1009,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "fclone": {
+        "offset_bits": 1010,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "peeked": {
+        "offset_bits": 1012,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "head_frag": {
+        "offset_bits": 1013,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "pfmemalloc": {
+        "offset_bits": 1014,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "pp_recycle": {
+        "offset_bits": 1015,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "active_extensions": {
+        "offset_bits": 1016,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "__pkt_type_offset": {
+        "offset_bits": 1024,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "pkt_type": {
+        "offset_bits": 1024,
+        "size_bytes": 1,
+        "bitfield_width": 3
+      },
+      "ignore_df": {
+        "offset_bits": 1027,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "dst_pending_confirm": {
+        "offset_bits": 1028,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "ip_summed": {
+        "offset_bits": 1029,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "ooo_okay": {
+        "offset_bits": 1031,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "__mono_tc_offset": {
+        "offset_bits": 1032,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "mono_delivery_time": {
+        "offset_bits": 1032,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "tc_at_ingress": {
+        "offset_bits": 1033,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "tc_skip_classify": {
+        "offset_bits": 1034,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "remcsum_offload": {
+        "offset_bits": 1035,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "csum_complete_sw": {
+        "offset_bits": 1036,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "csum_level": {
+        "offset_bits": 1037,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "inner_protocol_type": {
+        "offset_bits": 1039,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "l4_hash": {
+        "offset_bits": 1040,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sw_hash": {
+        "offset_bits": 1041,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "wifi_acked_valid": {
+        "offset_bits": 1042,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "wifi_acked": {
+        "offset_bits": 1043,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "no_fcs": {
+        "offset_bits": 1044,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "encapsulation": {
+        "offset_bits": 1045,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "encap_hdr_csum": {
+        "offset_bits": 1046,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "csum_valid": {
+        "offset_bits": 1047,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "ndisc_nodetype": {
+        "offset_bits": 1048,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "nf_trace": {
+        "offset_bits": 1050,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "redirected": {
+        "offset_bits": 1051,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "from_ingress": {
+        "offset_bits": 1052,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "nf_skip_egress": {
+        "offset_bits": 1053,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "slow_gro": {
+        "offset_bits": 1054,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "tc_index": {
+        "offset_bits": 1056,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "alloc_cpu": {
+        "offset_bits": 1072,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "csum": {
+        "offset_bits": 1088,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "csum_start": {
+        "offset_bits": 1088,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "csum_offset": {
+        "offset_bits": 1104,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "priority": {
+        "offset_bits": 1120,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "skb_iif": {
+        "offset_bits": 1152,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "hash": {
+        "offset_bits": 1184,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "vlan_all": {
+        "offset_bits": 1216,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "vlan_proto": {
+        "offset_bits": 1216,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "vlan_tci": {
+        "offset_bits": 1232,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "napi_id": {
+        "offset_bits": 1248,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sender_cpu": {
+        "offset_bits": 1248,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "secmark": {
+        "offset_bits": 1280,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mark": {
+        "offset_bits": 1312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "reserved_tailroom": {
+        "offset_bits": 1312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "inner_protocol": {
+        "offset_bits": 1344,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "inner_ipproto": {
+        "offset_bits": 1344,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "inner_transport_header": {
+        "offset_bits": 1360,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "inner_network_header": {
+        "offset_bits": 1376,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "inner_mac_header": {
+        "offset_bits": 1392,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "protocol": {
+        "offset_bits": 1408,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "transport_header": {
+        "offset_bits": 1424,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "network_header": {
+        "offset_bits": 1440,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "mac_header": {
+        "offset_bits": 1456,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 1472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved2": {
+        "offset_bits": 1536,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "headers": {
+        "offset_bits": 1024,
+        "size_bytes": 72,
+        "bitfield_width": 0
+      },
+      "tail": {
+        "offset_bits": 1600,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "end": {
+        "offset_bits": 1632,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "head": {
+        "offset_bits": 1664,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "data": {
+        "offset_bits": 1728,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "truesize": {
+        "offset_bits": 1792,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "users": {
+        "offset_bits": 1824,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "extensions": {
+        "offset_bits": 1856,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "sock": {
+    "size_bytes": 856,
+    "fields": {
+      "__sk_common": {
+        "offset_bits": 0,
+        "size_bytes": 136,
+        "bitfield_width": 0
+      },
+      "sk_rx_dst": {
+        "offset_bits": 1088,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_rx_dst_ifindex": {
+        "offset_bits": 1152,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_rx_dst_cookie": {
+        "offset_bits": 1184,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_lock": {
+        "offset_bits": 1216,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "sk_drops": {
+        "offset_bits": 1472,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_rcvlowat": {
+        "offset_bits": 1504,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_error_queue": {
+        "offset_bits": 1536,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "sk_receive_queue": {
+        "offset_bits": 1728,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "sk_backlog": {
+        "offset_bits": 1920,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "sk_forward_alloc": {
+        "offset_bits": 2112,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_reserved_mem": {
+        "offset_bits": 2144,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_ll_usec": {
+        "offset_bits": 2176,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_napi_id": {
+        "offset_bits": 2208,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_rcvbuf": {
+        "offset_bits": 2240,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_disconnects": {
+        "offset_bits": 2272,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_filter": {
+        "offset_bits": 2304,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_wq": {
+        "offset_bits": 2368,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_wq_raw": {
+        "offset_bits": 2368,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_policy": {
+        "offset_bits": 2432,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "sk_dst_cache": {
+        "offset_bits": 2560,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_omem_alloc": {
+        "offset_bits": 2624,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_sndbuf": {
+        "offset_bits": 2656,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_wmem_queued": {
+        "offset_bits": 2688,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_wmem_alloc": {
+        "offset_bits": 2720,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_tsq_flags": {
+        "offset_bits": 2752,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_send_head": {
+        "offset_bits": 2816,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcp_rtx_queue": {
+        "offset_bits": 2816,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_write_queue": {
+        "offset_bits": 2880,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "sk_peek_off": {
+        "offset_bits": 3072,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_write_pending": {
+        "offset_bits": 3104,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_dst_pending_confirm": {
+        "offset_bits": 3136,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_pacing_status": {
+        "offset_bits": 3168,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_sndtimeo": {
+        "offset_bits": 3200,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_timer": {
+        "offset_bits": 3264,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "sk_priority": {
+        "offset_bits": 3712,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_mark": {
+        "offset_bits": 3744,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_pacing_rate": {
+        "offset_bits": 3776,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_max_pacing_rate": {
+        "offset_bits": 3840,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_frag": {
+        "offset_bits": 3904,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "sk_route_caps": {
+        "offset_bits": 4032,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_gso_type": {
+        "offset_bits": 4096,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_gso_max_size": {
+        "offset_bits": 4128,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_allocation": {
+        "offset_bits": 4160,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_txhash": {
+        "offset_bits": 4192,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_gso_disabled": {
+        "offset_bits": 4224,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_kern_sock": {
+        "offset_bits": 4225,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_no_check_tx": {
+        "offset_bits": 4226,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_no_check_rx": {
+        "offset_bits": 4227,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_userlocks": {
+        "offset_bits": 4228,
+        "size_bytes": 1,
+        "bitfield_width": 4
+      },
+      "sk_pacing_shift": {
+        "offset_bits": 4232,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_type": {
+        "offset_bits": 4240,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "sk_protocol": {
+        "offset_bits": 4256,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "sk_gso_max_segs": {
+        "offset_bits": 4272,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "sk_lingertime": {
+        "offset_bits": 4288,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_prot_creator": {
+        "offset_bits": 4352,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_callback_lock": {
+        "offset_bits": 4416,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_err": {
+        "offset_bits": 4480,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_err_soft": {
+        "offset_bits": 4512,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_ack_backlog": {
+        "offset_bits": 4544,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_max_ack_backlog": {
+        "offset_bits": 4576,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_uid": {
+        "offset_bits": 4608,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_txrehash": {
+        "offset_bits": 4640,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_prefer_busy_poll": {
+        "offset_bits": 4648,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_busy_poll_budget": {
+        "offset_bits": 4656,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "sk_peer_lock": {
+        "offset_bits": 4672,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_bind_phc": {
+        "offset_bits": 4704,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_peer_pid": {
+        "offset_bits": 4736,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_peer_cred": {
+        "offset_bits": 4800,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_rcvtimeo": {
+        "offset_bits": 4864,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_stamp": {
+        "offset_bits": 4928,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_tskey": {
+        "offset_bits": 4992,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_zckey": {
+        "offset_bits": 5024,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_tsflags": {
+        "offset_bits": 5056,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sk_shutdown": {
+        "offset_bits": 5088,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_clockid": {
+        "offset_bits": 5096,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_txtime_deadline_mode": {
+        "offset_bits": 5104,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_txtime_report_errors": {
+        "offset_bits": 5105,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "sk_txtime_unused": {
+        "offset_bits": 5106,
+        "size_bytes": 1,
+        "bitfield_width": 6
+      },
+      "sk_use_task_frag": {
+        "offset_bits": 5112,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sk_socket": {
+        "offset_bits": 5120,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_user_data": {
+        "offset_bits": 5184,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_security": {
+        "offset_bits": 5248,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_cgrp_data": {
+        "offset_bits": 5312,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "sk_memcg": {
+        "offset_bits": 5440,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_state_change": {
+        "offset_bits": 5504,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_data_ready": {
+        "offset_bits": 5568,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_write_space": {
+        "offset_bits": 5632,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_error_report": {
+        "offset_bits": 5696,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_backlog_rcv": {
+        "offset_bits": 5760,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_destruct": {
+        "offset_bits": 5824,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_reuseport_cb": {
+        "offset_bits": 5888,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_bpf_storage": {
+        "offset_bits": 5952,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sk_rcu": {
+        "offset_bits": 6016,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "ns_tracker": {
+        "offset_bits": 6144,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "sk_bind2_node": {
+        "offset_bits": 6144,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 6272,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved2": {
+        "offset_bits": 6336,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved3": {
+        "offset_bits": 6400,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved4": {
+        "offset_bits": 6464,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved5": {
+        "offset_bits": 6528,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved6": {
+        "offset_bits": 6592,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved7": {
+        "offset_bits": 6656,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved8": {
+        "offset_bits": 6720,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_oem_data1": {
+        "offset_bits": 6784,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "net_device": {
+    "size_bytes": 2688,
+    "fields": {
+      "name": {
+        "offset_bits": 0,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "name_node": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ifalias": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mem_end": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mem_start": {
+        "offset_bits": 320,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "base_addr": {
+        "offset_bits": 384,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "state": {
+        "offset_bits": 448,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dev_list": {
+        "offset_bits": 512,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "napi_list": {
+        "offset_bits": 640,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "unreg_list": {
+        "offset_bits": 768,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "close_list": {
+        "offset_bits": 896,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "ptype_all": {
+        "offset_bits": 1024,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "ptype_specific": {
+        "offset_bits": 1152,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "adj_list": {
+        "offset_bits": 1280,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "flags": {
+        "offset_bits": 1536,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "xdp_features": {
+        "offset_bits": 1568,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "priv_flags": {
+        "offset_bits": 1600,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "netdev_ops": {
+        "offset_bits": 1664,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "xdp_metadata_ops": {
+        "offset_bits": 1728,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ifindex": {
+        "offset_bits": 1792,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "gflags": {
+        "offset_bits": 1824,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "hard_header_len": {
+        "offset_bits": 1840,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "mtu": {
+        "offset_bits": 1856,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "needed_headroom": {
+        "offset_bits": 1888,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "needed_tailroom": {
+        "offset_bits": 1904,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "features": {
+        "offset_bits": 1920,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "hw_features": {
+        "offset_bits": 1984,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "wanted_features": {
+        "offset_bits": 2048,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "vlan_features": {
+        "offset_bits": 2112,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "hw_enc_features": {
+        "offset_bits": 2176,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mpls_features": {
+        "offset_bits": 2240,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "gso_partial_features": {
+        "offset_bits": 2304,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "min_mtu": {
+        "offset_bits": 2368,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "max_mtu": {
+        "offset_bits": 2400,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "type": {
+        "offset_bits": 2432,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "min_header_len": {
+        "offset_bits": 2448,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "name_assign_type": {
+        "offset_bits": 2456,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "group": {
+        "offset_bits": 2464,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "stats": {
+        "offset_bits": 2496,
+        "size_bytes": 184,
+        "bitfield_width": 0
+      },
+      "core_stats": {
+        "offset_bits": 3968,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "carrier_up_count": {
+        "offset_bits": 4032,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "carrier_down_count": {
+        "offset_bits": 4064,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "wireless_handlers": {
+        "offset_bits": 4096,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "wireless_data": {
+        "offset_bits": 4160,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ethtool_ops": {
+        "offset_bits": 4224,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ndisc_ops": {
+        "offset_bits": 4288,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "header_ops": {
+        "offset_bits": 4352,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "operstate": {
+        "offset_bits": 4416,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "link_mode": {
+        "offset_bits": 4424,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "if_port": {
+        "offset_bits": 4432,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "dma": {
+        "offset_bits": 4440,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "perm_addr": {
+        "offset_bits": 4448,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "addr_assign_type": {
+        "offset_bits": 4704,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "addr_len": {
+        "offset_bits": 4712,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "upper_level": {
+        "offset_bits": 4720,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "lower_level": {
+        "offset_bits": 4728,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "neigh_priv_len": {
+        "offset_bits": 4736,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "dev_id": {
+        "offset_bits": 4752,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "dev_port": {
+        "offset_bits": 4768,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "padded": {
+        "offset_bits": 4784,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "addr_list_lock": {
+        "offset_bits": 4800,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "irq": {
+        "offset_bits": 4832,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "uc": {
+        "offset_bits": 4864,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "mc": {
+        "offset_bits": 5120,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "dev_addrs": {
+        "offset_bits": 5376,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "queues_kset": {
+        "offset_bits": 5632,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "promiscuity": {
+        "offset_bits": 5696,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "allmulti": {
+        "offset_bits": 5728,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "uc_promisc": {
+        "offset_bits": 5760,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "ip_ptr": {
+        "offset_bits": 5824,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ip6_ptr": {
+        "offset_bits": 5888,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "vlan_info": {
+        "offset_bits": 5952,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tipc_ptr": {
+        "offset_bits": 6016,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ieee80211_ptr": {
+        "offset_bits": 6080,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ieee802154_ptr": {
+        "offset_bits": 6144,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dev_addr": {
+        "offset_bits": 6208,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "_rx": {
+        "offset_bits": 6272,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "num_rx_queues": {
+        "offset_bits": 6336,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "real_num_rx_queues": {
+        "offset_bits": 6368,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "xdp_prog": {
+        "offset_bits": 6400,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "gro_flush_timeout": {
+        "offset_bits": 6464,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "napi_defer_hard_irqs": {
+        "offset_bits": 6528,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "gro_max_size": {
+        "offset_bits": 6560,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "gro_ipv4_max_size": {
+        "offset_bits": 6592,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "xdp_zc_max_segs": {
+        "offset_bits": 6624,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rx_handler": {
+        "offset_bits": 6656,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rx_handler_data": {
+        "offset_bits": 6720,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcx_ingress": {
+        "offset_bits": 6784,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ingress_queue": {
+        "offset_bits": 6848,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nf_hooks_ingress": {
+        "offset_bits": 6912,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "broadcast": {
+        "offset_bits": 6976,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "rx_cpu_rmap": {
+        "offset_bits": 7232,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "index_hlist": {
+        "offset_bits": 7296,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "_tx": {
+        "offset_bits": 7680,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "num_tx_queues": {
+        "offset_bits": 7744,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "real_num_tx_queues": {
+        "offset_bits": 7776,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "qdisc": {
+        "offset_bits": 7808,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tx_queue_len": {
+        "offset_bits": 7872,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tx_global_lock": {
+        "offset_bits": 7904,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "xdp_bulkq": {
+        "offset_bits": 7936,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "xps_maps": {
+        "offset_bits": 8000,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "tcx_egress": {
+        "offset_bits": 8128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nf_hooks_egress": {
+        "offset_bits": 8192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "qdisc_hash": {
+        "offset_bits": 8256,
+        "size_bytes": 128,
+        "bitfield_width": 0
+      },
+      "watchdog_timer": {
+        "offset_bits": 9280,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "watchdog_timeo": {
+        "offset_bits": 9728,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "proto_down_reason": {
+        "offset_bits": 9760,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "todo_list": {
+        "offset_bits": 9792,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "pcpu_refcnt": {
+        "offset_bits": 9920,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "refcnt_tracker": {
+        "offset_bits": 9984,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "link_watch_list": {
+        "offset_bits": 9984,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "reg_state": {
+        "offset_bits": 10112,
+        "size_bytes": 4,
+        "bitfield_width": 8
+      },
+      "dismantle": {
+        "offset_bits": 10120,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "rtnl_link_state": {
+        "offset_bits": 10128,
+        "size_bytes": 4,
+        "bitfield_width": 16
+      },
+      "needs_free_netdev": {
+        "offset_bits": 10144,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "priv_destructor": {
+        "offset_bits": 10176,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "nd_net": {
+        "offset_bits": 10240,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ml_priv": {
+        "offset_bits": 10304,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ml_priv_type": {
+        "offset_bits": 10368,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pcpu_stat_type": {
+        "offset_bits": 10400,
+        "size_bytes": 4,
+        "bitfield_width": 8
+      },
+      "lstats": {
+        "offset_bits": 10432,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tstats": {
+        "offset_bits": 10432,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dstats": {
+        "offset_bits": 10432,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dev": {
+        "offset_bits": 10496,
+        "size_bytes": 936,
+        "bitfield_width": 0
+      },
+      "sysfs_groups": {
+        "offset_bits": 17984,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "sysfs_rx_queue_group": {
+        "offset_bits": 18240,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rtnl_link_ops": {
+        "offset_bits": 18304,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "gso_max_size": {
+        "offset_bits": 18368,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tso_max_size": {
+        "offset_bits": 18400,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "gso_max_segs": {
+        "offset_bits": 18432,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "tso_max_segs": {
+        "offset_bits": 18448,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "gso_ipv4_max_size": {
+        "offset_bits": 18464,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "num_tc": {
+        "offset_bits": 18496,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "tc_to_txq": {
+        "offset_bits": 18512,
+        "size_bytes": 64,
+        "bitfield_width": 0
+      },
+      "prio_tc_map": {
+        "offset_bits": 19024,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "priomap": {
+        "offset_bits": 19200,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "phydev": {
+        "offset_bits": 19264,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "sfp_bus": {
+        "offset_bits": 19328,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "qdisc_tx_busylock": {
+        "offset_bits": 19392,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "proto_down": {
+        "offset_bits": 19456,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "wol_enabled": {
+        "offset_bits": 19464,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "threaded": {
+        "offset_bits": 19465,
+        "size_bytes": 4,
+        "bitfield_width": 1
+      },
+      "net_notifier_list": {
+        "offset_bits": 19520,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "macsec_ops": {
+        "offset_bits": 19648,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "udp_tunnel_nic_info": {
+        "offset_bits": 19712,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "udp_tunnel_nic": {
+        "offset_bits": 19776,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "xdp_state": {
+        "offset_bits": 19840,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "dev_addr_shadow": {
+        "offset_bits": 20224,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "linkwatch_dev_tracker": {
+        "offset_bits": 20480,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "watchdog_dev_tracker": {
+        "offset_bits": 20480,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "dev_registered_tracker": {
+        "offset_bits": 20480,
+        "size_bytes": 0,
+        "bitfield_width": 0
+      },
+      "offload_xstats_l3": {
+        "offset_bits": 20480,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "devlink_port": {
+        "offset_bits": 20544,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 20608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved2": {
+        "offset_bits": 20672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved3": {
+        "offset_bits": 20736,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved4": {
+        "offset_bits": 20800,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved5": {
+        "offset_bits": 20864,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved6": {
+        "offset_bits": 20928,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved7": {
+        "offset_bits": 20992,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved8": {
+        "offset_bits": 21056,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "genl_split_ops": {
+    "size_bytes": 40,
+    "fields": {
+      "pre_doit": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "doit": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "post_doit": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "start": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dumpit": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "done": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "policy": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "maxattr": {
+        "offset_bits": 256,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cmd": {
+        "offset_bits": 288,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "internal_flags": {
+        "offset_bits": 296,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "flags": {
+        "offset_bits": 304,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "validate": {
+        "offset_bits": 312,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "genl_ops": {
+    "size_bytes": 56,
+    "fields": {
+      "doit": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "start": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dumpit": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "done": {
+        "offset_bits": 192,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "policy": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "maxattr": {
+        "offset_bits": 320,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cmd": {
+        "offset_bits": 352,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "internal_flags": {
+        "offset_bits": 360,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "flags": {
+        "offset_bits": 368,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "validate": {
+        "offset_bits": 376,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 384,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "genl_multicast_group": {
+    "size_bytes": 18,
+    "fields": {
+      "name": {
+        "offset_bits": 0,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "flags": {
+        "offset_bits": 128,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "cap_sys_admin": {
+        "offset_bits": 136,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      }
+    }
+  },
+  "cma": {
+    "size_bytes": 136,
+    "fields": {
+      "base_pfn": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "count": {
+        "offset_bits": 64,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "bitmap": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "order_per_bit": {
+        "offset_bits": 192,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lock": {
+        "offset_bits": 224,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mem_head": {
+        "offset_bits": 256,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "mem_head_lock": {
+        "offset_bits": 320,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "dfs_bitmap": {
+        "offset_bits": 384,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "name": {
+        "offset_bits": 512,
+        "size_bytes": 64,
+        "bitfield_width": 0
+      },
+      "reserve_pages_on_error": {
+        "offset_bits": 1024,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "serdev_device_driver": {
+    "size_bytes": 192,
+    "fields": {
+      "driver": {
+        "offset_bits": 0,
+        "size_bytes": 176,
+        "bitfield_width": 0
+      },
+      "probe": {
+        "offset_bits": 1408,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "remove": {
+        "offset_bits": 1472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "rc_dev": {
+    "size_bytes": 2600,
+    "fields": {
+      "dev": {
+        "offset_bits": 0,
+        "size_bytes": 936,
+        "bitfield_width": 0
+      },
+      "managed_alloc": {
+        "offset_bits": 7488,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "sysfs_groups": {
+        "offset_bits": 7552,
+        "size_bytes": 40,
+        "bitfield_width": 0
+      },
+      "device_name": {
+        "offset_bits": 7872,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "input_phys": {
+        "offset_bits": 7936,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "input_id": {
+        "offset_bits": 8000,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "driver_name": {
+        "offset_bits": 8064,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "map_name": {
+        "offset_bits": 8128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rc_map": {
+        "offset_bits": 8192,
+        "size_bytes": 40,
+        "bitfield_width": 0
+      },
+      "lock": {
+        "offset_bits": 8512,
+        "size_bytes": 48,
+        "bitfield_width": 0
+      },
+      "minor": {
+        "offset_bits": 8896,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "raw": {
+        "offset_bits": 8960,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "input_dev": {
+        "offset_bits": 9024,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "driver_type": {
+        "offset_bits": 9088,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "idle": {
+        "offset_bits": 9120,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "encode_wakeup": {
+        "offset_bits": 9128,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "allowed_protocols": {
+        "offset_bits": 9152,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "enabled_protocols": {
+        "offset_bits": 9216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "allowed_wakeup_protocols": {
+        "offset_bits": 9280,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "wakeup_protocol": {
+        "offset_bits": 9344,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "scancode_filter": {
+        "offset_bits": 9376,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "scancode_wakeup_filter": {
+        "offset_bits": 9440,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "scancode_mask": {
+        "offset_bits": 9504,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "users": {
+        "offset_bits": 9536,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "priv": {
+        "offset_bits": 9600,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "keylock": {
+        "offset_bits": 9664,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "keypressed": {
+        "offset_bits": 9696,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "keyup_jiffies": {
+        "offset_bits": 9728,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "timer_keyup": {
+        "offset_bits": 9792,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "timer_repeat": {
+        "offset_bits": 10240,
+        "size_bytes": 56,
+        "bitfield_width": 0
+      },
+      "last_keycode": {
+        "offset_bits": 10688,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "last_protocol": {
+        "offset_bits": 10720,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "last_scancode": {
+        "offset_bits": 10752,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "last_toggle": {
+        "offset_bits": 10816,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "timeout": {
+        "offset_bits": 10848,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "min_timeout": {
+        "offset_bits": 10880,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "max_timeout": {
+        "offset_bits": 10912,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rx_resolution": {
+        "offset_bits": 10944,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tx_resolution": {
+        "offset_bits": 10976,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lirc_dev": {
+        "offset_bits": 11008,
+        "size_bytes": 936,
+        "bitfield_width": 0
+      },
+      "lirc_cdev": {
+        "offset_bits": 18496,
+        "size_bytes": 136,
+        "bitfield_width": 0
+      },
+      "gap_start": {
+        "offset_bits": 19584,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "lirc_fh_lock": {
+        "offset_bits": 19648,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lirc_fh": {
+        "offset_bits": 19712,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "registered": {
+        "offset_bits": 19840,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "change_protocol": {
+        "offset_bits": 19904,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "open": {
+        "offset_bits": 19968,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "close": {
+        "offset_bits": 20032,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_tx_mask": {
+        "offset_bits": 20096,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_tx_carrier": {
+        "offset_bits": 20160,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_tx_duty_cycle": {
+        "offset_bits": 20224,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_rx_carrier_range": {
+        "offset_bits": 20288,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tx_ir": {
+        "offset_bits": 20352,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_idle": {
+        "offset_bits": 20416,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_wideband_receiver": {
+        "offset_bits": 20480,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_carrier_report": {
+        "offset_bits": 20544,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_filter": {
+        "offset_bits": 20608,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_wakeup_filter": {
+        "offset_bits": 20672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "s_timeout": {
+        "offset_bits": 20736,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "tcp_sock": {
+    "size_bytes": 2384,
+    "fields": {
+      "inet_conn": {
+        "offset_bits": 0,
+        "size_bytes": 1536,
+        "bitfield_width": 0
+      },
+      "tcp_header_len": {
+        "offset_bits": 12288,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "gso_segs": {
+        "offset_bits": 12304,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "pred_flags": {
+        "offset_bits": 12320,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "bytes_received": {
+        "offset_bits": 12352,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "segs_in": {
+        "offset_bits": 12416,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "data_segs_in": {
+        "offset_bits": 12448,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_nxt": {
+        "offset_bits": 12480,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "copied_seq": {
+        "offset_bits": 12512,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_wup": {
+        "offset_bits": 12544,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_nxt": {
+        "offset_bits": 12576,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "segs_out": {
+        "offset_bits": 12608,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "data_segs_out": {
+        "offset_bits": 12640,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "bytes_sent": {
+        "offset_bits": 12672,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "bytes_acked": {
+        "offset_bits": 12736,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "dsack_dups": {
+        "offset_bits": 12800,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_una": {
+        "offset_bits": 12832,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_sml": {
+        "offset_bits": 12864,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_tstamp": {
+        "offset_bits": 12896,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lsndtime": {
+        "offset_bits": 12928,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "last_oow_ack_time": {
+        "offset_bits": 12960,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "compressed_ack_rcv_nxt": {
+        "offset_bits": 12992,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tsoffset": {
+        "offset_bits": 13024,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tsq_node": {
+        "offset_bits": 13056,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "tsorted_sent_queue": {
+        "offset_bits": 13184,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "snd_wl1": {
+        "offset_bits": 13312,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_wnd": {
+        "offset_bits": 13344,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "max_window": {
+        "offset_bits": 13376,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mss_cache": {
+        "offset_bits": 13408,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "window_clamp": {
+        "offset_bits": 13440,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_ssthresh": {
+        "offset_bits": 13472,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "scaling_ratio": {
+        "offset_bits": 13504,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "rack": {
+        "offset_bits": 13568,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "advmss": {
+        "offset_bits": 13760,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "compressed_ack": {
+        "offset_bits": 13776,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "dup_ack_counter": {
+        "offset_bits": 13784,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "tlp_retrans": {
+        "offset_bits": 13786,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "unused": {
+        "offset_bits": 13787,
+        "size_bytes": 1,
+        "bitfield_width": 5
+      },
+      "chrono_start": {
+        "offset_bits": 13792,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "chrono_stat": {
+        "offset_bits": 13824,
+        "size_bytes": 12,
+        "bitfield_width": 0
+      },
+      "chrono_type": {
+        "offset_bits": 13920,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "rate_app_limited": {
+        "offset_bits": 13922,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "fastopen_connect": {
+        "offset_bits": 13923,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "fastopen_no_cookie": {
+        "offset_bits": 13924,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "is_sack_reneg": {
+        "offset_bits": 13925,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "fastopen_client_fail": {
+        "offset_bits": 13926,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "nonagle": {
+        "offset_bits": 13928,
+        "size_bytes": 1,
+        "bitfield_width": 4
+      },
+      "thin_lto": {
+        "offset_bits": 13932,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "recvmsg_inq": {
+        "offset_bits": 13933,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "repair": {
+        "offset_bits": 13934,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "frto": {
+        "offset_bits": 13935,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "repair_queue": {
+        "offset_bits": 13936,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "save_syn": {
+        "offset_bits": 13944,
+        "size_bytes": 1,
+        "bitfield_width": 2
+      },
+      "syn_data": {
+        "offset_bits": 13946,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "syn_fastopen": {
+        "offset_bits": 13947,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "syn_fastopen_exp": {
+        "offset_bits": 13948,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "syn_fastopen_ch": {
+        "offset_bits": 13949,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "syn_data_acked": {
+        "offset_bits": 13950,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "is_cwnd_limited": {
+        "offset_bits": 13951,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "tlp_high_seq": {
+        "offset_bits": 13952,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcp_tx_delay": {
+        "offset_bits": 13984,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcp_wstamp_ns": {
+        "offset_bits": 14016,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcp_clock_cache": {
+        "offset_bits": 14080,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcp_mstamp": {
+        "offset_bits": 14144,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "srtt_us": {
+        "offset_bits": 14208,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mdev_us": {
+        "offset_bits": 14240,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mdev_max_us": {
+        "offset_bits": 14272,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rttvar_us": {
+        "offset_bits": 14304,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rtt_seq": {
+        "offset_bits": 14336,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rtt_min": {
+        "offset_bits": 14368,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "packets_out": {
+        "offset_bits": 14560,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "retrans_out": {
+        "offset_bits": 14592,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "max_packets_out": {
+        "offset_bits": 14624,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cwnd_usage_seq": {
+        "offset_bits": 14656,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "urg_data": {
+        "offset_bits": 14688,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "ecn_flags": {
+        "offset_bits": 14704,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "keepalive_probes": {
+        "offset_bits": 14712,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "reordering": {
+        "offset_bits": 14720,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "reord_seen": {
+        "offset_bits": 14752,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_up": {
+        "offset_bits": 14784,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rx_opt": {
+        "offset_bits": 14816,
+        "size_bytes": 24,
+        "bitfield_width": 0
+      },
+      "snd_ssthresh": {
+        "offset_bits": 15008,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_cwnd": {
+        "offset_bits": 15040,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_cwnd_cnt": {
+        "offset_bits": 15072,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_cwnd_clamp": {
+        "offset_bits": 15104,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_cwnd_used": {
+        "offset_bits": 15136,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "snd_cwnd_stamp": {
+        "offset_bits": 15168,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prior_cwnd": {
+        "offset_bits": 15200,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prr_delivered": {
+        "offset_bits": 15232,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prr_out": {
+        "offset_bits": 15264,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "delivered": {
+        "offset_bits": 15296,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "delivered_ce": {
+        "offset_bits": 15328,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lost": {
+        "offset_bits": 15360,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "app_limited": {
+        "offset_bits": 15392,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "first_tx_mstamp": {
+        "offset_bits": 15424,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "delivered_mstamp": {
+        "offset_bits": 15488,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "rate_delivered": {
+        "offset_bits": 15552,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rate_interval_us": {
+        "offset_bits": 15584,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_wnd": {
+        "offset_bits": 15616,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "write_seq": {
+        "offset_bits": 15648,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "notsent_lowat": {
+        "offset_bits": 15680,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pushed_seq": {
+        "offset_bits": 15712,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "lost_out": {
+        "offset_bits": 15744,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "sacked_out": {
+        "offset_bits": 15776,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "pacing_timer": {
+        "offset_bits": 15808,
+        "size_bytes": 72,
+        "bitfield_width": 0
+      },
+      "compressed_ack_timer": {
+        "offset_bits": 16384,
+        "size_bytes": 72,
+        "bitfield_width": 0
+      },
+      "lost_skb_hint": {
+        "offset_bits": 16960,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "retransmit_skb_hint": {
+        "offset_bits": 17024,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "out_of_order_queue": {
+        "offset_bits": 17088,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "ooo_last_skb": {
+        "offset_bits": 17152,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "duplicate_sack": {
+        "offset_bits": 17216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "selective_acks": {
+        "offset_bits": 17280,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "recv_sack_cache": {
+        "offset_bits": 17536,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "highest_sack": {
+        "offset_bits": 17792,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "lost_cnt_hint": {
+        "offset_bits": 17856,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "prior_ssthresh": {
+        "offset_bits": 17888,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "high_seq": {
+        "offset_bits": 17920,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "retrans_stamp": {
+        "offset_bits": 17952,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "undo_marker": {
+        "offset_bits": 17984,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "undo_retrans": {
+        "offset_bits": 18016,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "bytes_retrans": {
+        "offset_bits": 18048,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "total_retrans": {
+        "offset_bits": 18112,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "urg_seq": {
+        "offset_bits": 18144,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "keepalive_time": {
+        "offset_bits": 18176,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "keepalive_intvl": {
+        "offset_bits": 18208,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "linger2": {
+        "offset_bits": 18240,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "bpf_sock_ops_cb_flags": {
+        "offset_bits": 18272,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "bpf_chg_cc_inprogress": {
+        "offset_bits": 18280,
+        "size_bytes": 1,
+        "bitfield_width": 1
+      },
+      "timeout_rehash": {
+        "offset_bits": 18288,
+        "size_bytes": 2,
+        "bitfield_width": 0
+      },
+      "rcv_ooopack": {
+        "offset_bits": 18304,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_rtt_last_tsecr": {
+        "offset_bits": 18336,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "rcv_rtt_est": {
+        "offset_bits": 18368,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "rcvq_space": {
+        "offset_bits": 18496,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "mtu_probe": {
+        "offset_bits": 18624,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "plb_rehash": {
+        "offset_bits": 18688,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "mtu_info": {
+        "offset_bits": 18720,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "fastopen_req": {
+        "offset_bits": 18752,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "fastopen_rsk": {
+        "offset_bits": 18816,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "saved_syn": {
+        "offset_bits": 18880,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_oem_data1": {
+        "offset_bits": 18944,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "android_kabi_reserved1": {
+        "offset_bits": 19008,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      }
+    }
+  },
+  "tc_action": {
+    "size_bytes": 208,
+    "fields": {
+      "ops": {
+        "offset_bits": 0,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "type": {
+        "offset_bits": 64,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "idrinfo": {
+        "offset_bits": 128,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcfa_index": {
+        "offset_bits": 192,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcfa_refcnt": {
+        "offset_bits": 224,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcfa_bindcnt": {
+        "offset_bits": 256,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcfa_action": {
+        "offset_bits": 288,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "tcfa_tm": {
+        "offset_bits": 320,
+        "size_bytes": 32,
+        "bitfield_width": 0
+      },
+      "tcfa_bstats": {
+        "offset_bits": 640,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "tcfa_bstats_hw": {
+        "offset_bits": 768,
+        "size_bytes": 16,
+        "bitfield_width": 0
+      },
+      "tcfa_qstats": {
+        "offset_bits": 896,
+        "size_bytes": 20,
+        "bitfield_width": 0
+      },
+      "tcfa_rate_est": {
+        "offset_bits": 1088,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcfa_lock": {
+        "offset_bits": 1152,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "cpu_bstats": {
+        "offset_bits": 1216,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cpu_bstats_hw": {
+        "offset_bits": 1280,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "cpu_qstats": {
+        "offset_bits": 1344,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "user_cookie": {
+        "offset_bits": 1408,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "goto_chain": {
+        "offset_bits": 1472,
+        "size_bytes": 8,
+        "bitfield_width": 0
+      },
+      "tcfa_flags": {
+        "offset_bits": 1536,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      },
+      "hw_stats": {
+        "offset_bits": 1568,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "used_hw_stats": {
+        "offset_bits": 1576,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "used_hw_stats_valid": {
+        "offset_bits": 1584,
+        "size_bytes": 1,
+        "bitfield_width": 0
+      },
+      "in_hw_count": {
+        "offset_bits": 1600,
+        "size_bytes": 4,
+        "bitfield_width": 0
+      }
+    }
+  }
+}
