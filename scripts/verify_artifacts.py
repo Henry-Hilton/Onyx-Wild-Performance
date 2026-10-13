@@ -17,7 +17,8 @@ with zipfile.ZipFile(zip_path) as z:
  assert json.loads(z.read('build-manifest.json'))==m
  installer=z.read('anykernel.sh').decode()
  assert 'device.name1=onyx' in installer and 'do.devicecheck=1' in installer
- assert 'do.modules=0' in installer and 'block=boot' in installer
+ assert 'do.modules=0' in installer and 'block=$ONYX_BOOT_BLOCK' in installer
+ assert 'onyx-boot.sh' in z.namelist()
  assert not {'dtb','dtbo.img','vendor_boot.img'}&set(z.namelist())
  assert z.getinfo('META-INF/com/google/android/update-binary').external_attr>>16 & 0o111
  assert z.getinfo('tools/ak3-core.sh').external_attr>>16 & 0o111

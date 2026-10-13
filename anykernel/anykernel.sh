@@ -16,8 +16,12 @@ supported.patchlevels=
 supported.vendorpatchlevels=
 '; }
 
-block=boot
-is_slot_device=auto
+onyx_slot_override=
+. ./onyx-boot.sh
+onyx_resolve_boot || exit 1
+block=$ONYX_BOOT_BLOCK
+SLOT=$ONYX_BOOT_SLOT
+is_slot_device=0
 ramdisk_compression=auto
 patch_vbmeta_flag=auto
 no_magisk_check=1

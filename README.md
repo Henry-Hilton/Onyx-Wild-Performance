@@ -86,6 +86,11 @@ and the usual kernel build dependencies. The script supplies the recorded
 KernelSU version when Git history is absent. Component patches are also saved.
 
 The installer checks for onyx and replaces the current slot's boot kernel,
+using slot properties, `/proc/bootconfig` or the kernel command line. Boot block
+devices are resolved through named links, deeper recovery paths or sysfs
+partition names. The `Slot-A` and `Slot-B` ZIPs provide an explicit slot when a
+recovery exposes no active-slot metadata; choose only your confirmed active slot.
+If available metadata disagrees with that selection, installation aborts.
 retaining the installed ROM's ramdisk and device trees. It does not replace
 vendor or system modules. Stock 250 Hz, CFI, KASAN exports and vendor-visible
 debug interfaces are retained for module compatibility; KASAN is requested

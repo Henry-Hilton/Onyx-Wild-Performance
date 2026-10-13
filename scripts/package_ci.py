@@ -43,6 +43,7 @@ for name in ('Image','Image.gz','Image.lz4','dtb','dtbo.img'):
  path=stage/name
  if path.is_file():path.unlink()
 shutil.copy2(w/'anykernel/anykernel.sh',stage/'anykernel.sh');shutil.copy2(image,stage/'Image.gz')
+shutil.copy2(w/'anykernel/onyx-boot.sh',stage/'onyx-boot.sh')
 for name in ('build-manifest.json','kernel.config','structure-layout-audit.json'):shutil.copy2(dist/name,stage/name)
 (stage/'profiles').mkdir(exist_ok=True);shutil.copy2(w/'profiles/max-performance.sh',stage/'profiles/max-performance.sh')
 version=manifest['kernel_release'].split('-',1)[0]
@@ -62,3 +63,4 @@ summary={'module_files_checked':a['module_count'],'layout_structures_checked':15
 (dist/'validation-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 for path in (package,source):(dist/(path.name+'.sha256')).write_text(f'{sha(path)}  {path.name}\n')
 print(package)
+subprocess.run([sys.executable,str(w/'scripts/make_slot_variants.py'),str(package)],check=True)

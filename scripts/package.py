@@ -56,6 +56,7 @@ for file in (root/'anykernel').iterdir():
     else:
         shutil.copy2(file,dest)
 shutil.copy2(workspace/'anykernel/anykernel.sh',stage/'anykernel.sh')
+shutil.copy2(workspace/'anykernel/onyx-boot.sh',stage/'onyx-boot.sh')
 for name in ('Image','Image.gz','Image.lz4','dtb','dtbo.img'):
     path=stage/name
     if path.is_file():
@@ -84,3 +85,4 @@ digest=hashlib.sha256(zip_path.read_bytes()).hexdigest()
 (dist/(zip_path.name+'.sha256')).write_text(f'{digest}  {zip_path.name}\n')
 print(zip_path)
 print('SHA256:',digest)
+subprocess.run([sys.executable,str(workspace/'scripts/make_slot_variants.py'),str(zip_path)],check=True)
