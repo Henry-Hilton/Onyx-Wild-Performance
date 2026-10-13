@@ -55,6 +55,8 @@ if args.symvers:
         cols=line.split()
         if len(cols)>=3:
             exports[cols[1]]=int(cols[0],16)
+    if not exports:
+        raise SystemExit('Kernel export table is empty; refusing an incomplete ABI audit')
 missing=defaultdict(list)
 mismatch=defaultdict(list)
 if exports:
