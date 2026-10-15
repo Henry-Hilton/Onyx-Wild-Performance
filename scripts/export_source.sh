@@ -9,6 +9,7 @@ for component in kernelsu susfs nomount bbg; do
 done
 cp "$WORKSPACE/README.md" "$ROOT/source-notices/README.md"
 cp "$WORKSPACE/scripts/build_exported_source.sh" "$ROOT/source-notices/build_exported_source.sh"
+cp "$WORKSPACE/sources.lock.json" "$ROOT/source-notices/sources.lock.json"
 for component in kernel kernelsu nomount bbg; do
   git -C "$ROOT/$component" diff --binary > "$WORKSPACE/dist/source-patches/$component.patch"
 done

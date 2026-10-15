@@ -24,4 +24,5 @@ shutil.copy2(r/'out/requested-features.json',w/'configs/requested-features.json'
 manifest=json.loads((w/'dist/build-manifest.json').read_text())
 (w/'sources.lock.json').write_text(json.dumps({'sources':sources,'provenance':manifest['components'],
  'wildkernels_revision':manifest['wildkernels_revision'],'stable_update_revision':manifest['stable_update_revision'],
- 'kernel_su_git_version':2680,'abi_baseline':'crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)'},indent=2)+'\n')
+ 'kernel_su_git_version':int(subprocess.check_output(['git','-C',str(r/'kernelsu'),'rev-list','--count','HEAD'],text=True)),
+ 'abi_baseline':'crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)'},indent=2)+'\n')

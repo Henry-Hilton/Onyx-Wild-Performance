@@ -29,6 +29,9 @@ does not silently absorb unreviewed upstream changes.
 Target: Redmi Turbo 4 Pro / Poco F7 (`onyx`), Android 15 GKI generation,
 Linux 6.6, 4 KiB pages. The intended targets are current HyperOS and AOSP ROMs.
 Boot validation on a physical phone is required before claiming compatibility.
+The user confirmed that v0.1.2 boots AxionOS 2.9 (Android 16 QPR2) without
+issues observed so far. This is a user-reported result for that build; subsequent
+upstream updates still require device validation.
 
 The working source is the maintained crDroid onyx tree at
 `10570812a4878b644e31b47c2f0bd052664cf86d`, initially Linux 6.6.142.

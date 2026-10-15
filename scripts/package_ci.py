@@ -14,6 +14,7 @@ notices=r/'source-notices';notices.mkdir(exist_ok=True)
 shutil.copytree(w/'licenses',notices/'licenses',dirs_exist_ok=True)
 shutil.copy2(w/'README.md',notices/'README.md')
 shutil.copy2(w/'scripts/build_exported_source.sh',notices/'build_exported_source.sh')
+shutil.copy2(w/'sources.lock.json',notices/'sources.lock.json')
 source=dist/'Onyx-Wild-Performance-source.tar.gz'
 with tarfile.open(source,'w:gz',dereference=True) as archive:
  for tree in (r/'kernel',notices):

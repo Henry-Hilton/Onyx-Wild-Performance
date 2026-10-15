@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "0c0fdb960178fa12d80d6cbcfdcb6ad8be6a865d"
+      "commit": "b94e0916bf6394cb75b03f50b0e8f5a90de3471c"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "682f7b20bc3c177871c80bbd02c600e472f0df46"
+      "commit": "da36b5cae06a8380024b0486fb3a09700ec90cd7"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "crdroid": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "0c0fdb960178fa12d80d6cbcfdcb6ad8be6a865d",
-    "susfs": "bd7d199ac87808001127e8a6d076832e2938cf0d",
-    "nomount": "682f7b20bc3c177871c80bbd02c600e472f0df46",
+    "kernelsu": "b94e0916bf6394cb75b03f50b0e8f5a90de3471c",
+    "susfs": "2d11d711de80f0f749b3055f8da8f7b9682454e4",
+    "nomount": "da36b5cae06a8380024b0486fb3a09700ec90cd7",
     "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,6 +35,12 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2680,
-  "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)"
+  "kernel_su_git_version": 2682,
+  "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
+  "upstream_review": {
+    "date": "2026-10-15",
+    "wildkernels": "eec08a4e4256b5eb7c5c4079018d83861011ed4f",
+    "droidspaces": "a7186204762581ca0454f29f607dcd8f54f54f85",
+    "non_kernel_changes": "WildKernels digest/release CI; DroidSpaces userspace/UI; KernelSU manager/docs. Original integration provenance retained where kernel inputs are unchanged."
+  }
 }
