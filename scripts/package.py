@@ -11,6 +11,7 @@ with gzip.open(image,'rb') as handle:
     header=handle.read(64)
 if len(header)!=64 or header[56:60]!=b'ARM\x64':
     raise SystemExit('Compiled image does not contain an ARM64 Linux Image header')
+assert b'(SUSFS manual hook)' in gzip.decompress(image.read_bytes()), 'Preinit runner hook missing'
 audit=json.loads((dist/'crdroid-module-audit.json').read_text())
 layouts=json.loads((dist/'structure-layout-audit.json').read_text())
 feature_report=json.loads((out/'feature-validation.json').read_text())

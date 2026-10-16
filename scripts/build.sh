@@ -12,6 +12,7 @@ make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM=1 gki_defconfig
 python3 "$WORKSPACE/scripts/configure_features.py" "$KERNEL" "$OUT"
 make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM=1 olddefconfig
 python3 "$WORKSPACE/scripts/check_features.py" "$OUT/.config"
+make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM=1 headers_install
 make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM=1 -j"$JOBS" \
   KCFLAGS="-O3 -mtune=cortex-x4" Image.gz modules
 python3 "$WORKSPACE/scripts/audit_modules.py" --symvers "$OUT/vmlinux.symvers" \

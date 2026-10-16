@@ -6,6 +6,7 @@ r,w=map(Path,sys.argv[1:]);out=r/'out';dist=w/'dist'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 image=out/'arch/arm64/boot/Image.gz'
 with gzip.open(image,'rb') as f:assert f.read(64)[56:60]==b'ARM\x64'
+assert b'(SUSFS manual hook)' in gzip.decompress(image.read_bytes()), 'Preinit runner hook missing'
 a=json.loads((dist/'crdroid-module-audit.json').read_text());b=json.loads((dist/'structure-layout-audit.json').read_text())
 assert a['module_count']>0 and not a['missing_kernel_exports'] and not a['crc_mismatches']
 assert len(b['structures'])==15 and not b['mismatches']

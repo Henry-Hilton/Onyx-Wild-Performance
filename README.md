@@ -45,6 +45,11 @@ references; the deprecated repositories are not used as the final base.
   options exposed by WildKernels, including path, mount, kstat, map and uname
   support, open redirection, command-line/bootconfig support and Unicode fix.
 - NoMount kernel support; Baseband Guard with its LSM selected.
+- KernelSU preinit runner integrated through the SUSFS manual exec path before
+  UID/su filtering. PID 1 runs it once before `selinux_setup`; original arguments
+  are preserved and recoverable exec failures fall back to normal init. The
+  upstream runner retains action deadlines and boot-loop protection. Use a
+  matching current KernelSU manager/userspace to configure preinit modules.
 - WireGuard, BBR and BBRv3, IPSet variants, connection marking, TTL/hop-limit
   targets, IPv6 NAT, FQ/FQ-CoDel/CAKE and CIFS with xattrs/POSIX extensions.
 - BTF/eBPF/FUSE-BPF, TMPFS xattrs/ACLs, OverlayFS and NTSync.

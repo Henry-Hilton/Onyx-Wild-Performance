@@ -9123,7 +9123,7 @@ index 631e37a88..695a65b6a 100644
  
  __cacheline_aligned_in_smp DEFINE_SEQLOCK(rename_lock);
 diff --git a/fs/exec.c b/fs/exec.c
-index 8dc93215b..902097393 100644
+index 8dc93215b..09f5ad61b 100644
 --- a/fs/exec.c
 +++ b/fs/exec.c
 @@ -67,6 +67,9 @@
@@ -9136,10 +9136,11 @@ index 8dc93215b..902097393 100644
  
  #ifndef __GENKSYMS__
  #include <linux/dma-buf.h>
-@@ -1926,6 +1929,17 @@ static int bprm_execve(struct linux_binprm *bprm,
+@@ -1926,17 +1929,46 @@ static int bprm_execve(struct linux_binprm *bprm,
  	return retval;
  }
  
+-static int do_execveat_common(int fd, struct filename *filename,
 +#ifdef CONFIG_KSU_SUSFS
 +extern struct static_key_true ksu_su_compat_enabled;
 +extern struct static_key_true susfs_is_sdcard_android_data_not_decrypted;
@@ -9151,10 +9152,10 @@ index 8dc93215b..902097393 100644
 +				void *envp, int *flags, int *retval);
 +#endif
 +
- static int do_execveat_common(int fd, struct filename *filename,
++static int onyx_do_execveat_common(int fd, struct filename *filename,
  			      struct user_arg_ptr argv,
  			      struct user_arg_ptr envp,
-@@ -1933,10 +1947,28 @@ static int do_execveat_common(int fd, struct filename *filename,
+ 			      int flags)
  {
  	struct linux_binprm *bprm;
  	int retval;
@@ -9194,6 +9195,49 @@ index 8dc93215b..902097393 100644
  out_free:
  	free_bprm(bprm);
  
+@@ -2011,6 +2047,42 @@ static int do_execveat_common(int fd, struct filename *filename,
+ 	return retval;
+ }
+ 
++/* Preinit runs before SUSFS UID/su filtering and does not need syscall hooks. */
++static int do_execveat_common(int fd, struct filename *filename,
++                             struct user_arg_ptr argv,
++                             struct user_arg_ptr envp, int flags)
++{
++#ifdef CONFIG_KSU_SUSFS
++    extern struct filename *ksu_handle_preinit(struct filename *,
++                                              const char __user *, int *);
++    struct filename *runner = NULL;
++    int runner_fd = -1, ret;
++
++    if (unlikely(current->pid == 1) && fd == AT_FDCWD && !flags &&
++        !IS_ERR_OR_NULL(filename) &&
++        !strcmp(filename->name, "/system/bin/init")) {
++        const char __user *arg0 = get_user_arg_ptr(argv, 0);
++        if (!IS_ERR_OR_NULL(arg0))
++            runner = ksu_handle_preinit(filename, get_user_arg_ptr(argv, 1),
++                                       &runner_fd);
++    }
++    if (runner) {
++        /* Inner exec consumes runner; retain original filename for fallback. */
++        ret = onyx_do_execveat_common(fd, runner, argv, envp, flags);
++        if (ret < 0) {
++            close_fd(runner_fd);
++            if (!fatal_signal_pending(current)) {
++                pr_warn("KernelSU preinit runner failed (%d), retrying init\n", ret);
++                return onyx_do_execveat_common(fd, filename, argv, envp, flags);
++            }
++        }
++        putname(filename);
++        return ret;
++    }
++#endif
++    return onyx_do_execveat_common(fd, filename, argv, envp, flags);
++}
++
+ int kernel_execve(const char *kernel_filename,
+ 		  const char *const *argv, const char *const *envp)
+ {
 diff --git a/fs/f2fs/f2fs.h b/fs/f2fs/f2fs.h
 index 794a0262d..17bce72bd 100644
 --- a/fs/f2fs/f2fs.h
