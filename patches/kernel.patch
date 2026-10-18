@@ -9123,7 +9123,7 @@ index 631e37a88..695a65b6a 100644
  
  __cacheline_aligned_in_smp DEFINE_SEQLOCK(rename_lock);
 diff --git a/fs/exec.c b/fs/exec.c
-index 8dc93215b..09f5ad61b 100644
+index 8dc93215b..1df392d11 100644
 --- a/fs/exec.c
 +++ b/fs/exec.c
 @@ -67,6 +67,9 @@
@@ -9210,7 +9210,7 @@ index 8dc93215b..09f5ad61b 100644
 +    struct filename *runner = NULL;
 +    int runner_fd = -1, ret;
 +
-+    if (unlikely(current->pid == 1) && fd == AT_FDCWD && !flags &&
++    if (unlikely(current->pid == 1) && !(flags & AT_EMPTY_PATH) &&
 +        !IS_ERR_OR_NULL(filename) &&
 +        !strcmp(filename->name, "/system/bin/init")) {
 +        const char __user *arg0 = get_user_arg_ptr(argv, 0);
@@ -9220,7 +9220,7 @@ index 8dc93215b..09f5ad61b 100644
 +    }
 +    if (runner) {
 +        /* Inner exec consumes runner; retain original filename for fallback. */
-+        ret = onyx_do_execveat_common(fd, runner, argv, envp, flags);
++        ret = onyx_do_execveat_common(AT_FDCWD, runner, argv, envp, 0);
 +        if (ret < 0) {
 +            close_fd(runner_fd);
 +            if (!fatal_signal_pending(current)) {

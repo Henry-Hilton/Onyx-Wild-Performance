@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "0faec0cc7b5f655170d89bf9c4d28bb5ca271fa2"
+      "commit": "96770dfb807fea61e06819e4cbb438384df54b63"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "2c221c49fa97d50deb42a42e666373e1197be02e"
+      "commit": "2ef0b153d85cfa67408b520f8c66e1c5952de594"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "crdroid": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "0faec0cc7b5f655170d89bf9c4d28bb5ca271fa2",
-    "susfs": "2d11d711de80f0f749b3055f8da8f7b9682454e4",
-    "nomount": "2c221c49fa97d50deb42a42e666373e1197be02e",
+    "kernelsu": "96770dfb807fea61e06819e4cbb438384df54b63",
+    "susfs": "afb39173a6cc9f188093e7c8b71b709fc40f6565",
+    "nomount": "2ef0b153d85cfa67408b520f8c66e1c5952de594",
     "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,15 +35,16 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2692,
+  "kernel_su_git_version": 2693,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-17",
+    "date": "2026-10-19",
     "wildkernels": "eec08a4e4256b5eb7c5c4079018d83861011ed4f",
-    "droidspaces": "0aa20da53656790aee4747537bfacb301b165aec",
-    "non_kernel_changes": "WildKernels patch updates target KernelSU-Next, which this standard KernelSU build does not use. DroidSpaces updates are userspace-only; existing kernel prerequisites retained.",
-    "kernelsu": "0faec0cc7b5f655170d89bf9c4d28bb5ca271fa2",
-    "patches": "44b23a7601b98a3c548e2584e9f294d7b8b2d19b",
-    "kernelsu_integration": "Preinit ported to a one-shot manual exec hook before SUSFS UID/su filtering, retaining original init arguments and fallback before exec point of no return."
+    "droidspaces": "8b625e110270e2f0d32004f740b1e9a71b1f540c",
+    "non_kernel_changes": "SUSFS patch context refresh has no added/removed hook behavior. WildKernels patch update is Samsung-specific. DroidSpaces changes are userspace and documentation; kernel prerequisites retained.",
+    "kernelsu": "96770dfb807fea61e06819e4cbb438384df54b63",
+    "patches": "8fc499c0d147fdb6f79a2f15651213ab938ffd8c",
+    "kernelsu_integration": "Manual preinit hook supports path-based execve and execveat before SUSFS filtering; AT_EMPTY_PATH is excluded. Original init arguments and recoverable failure fallback retained.",
+    "susfs": "afb39173a6cc9f188093e7c8b71b709fc40f6565"
   }
 }

@@ -4,6 +4,7 @@ WORKSPACE=$(cd "$(dirname "$0")/.." && pwd)
 ROOT=${ONYX_BUILD_ROOT:-"$WORKSPACE/.build"}
 python3 "$WORKSPACE/scripts/prepare_ci_sources.py" "$ROOT"
 python3 "$WORKSPACE/scripts/test_preinit_runner.py" "$ROOT/kernelsu/kernel"
+python3 "$WORKSPACE/scripts/test_preinit_exec.py" "$ROOT/kernel/fs/exec.c"
 mkdir -p "$ROOT/out" "$WORKSPACE/dist"
 cp "$WORKSPACE/configs/kernel.config" "$ROOT/out/.config"
 cp "$WORKSPACE/configs/requested-features.json" "$ROOT/out/requested-features.json"
