@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "469c4282e72382388b4598fa022fe8ca91dc9ab5"
+      "commit": "4663610011d03771a64e7c36a2aa65bd1794022d"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "e5fe8a7f7de1ab209ad5164c2917be0a0bd3b549"
+      "commit": "d41b3c7ea6ec5316b35032ac6000f4cd086c7c8f"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "crdroid": "10570812a4878b644e31b47c2f0bd052664cf86d",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "469c4282e72382388b4598fa022fe8ca91dc9ab5",
+    "kernelsu": "4663610011d03771a64e7c36a2aa65bd1794022d",
     "susfs": "4a4cb1be85a4694372d3efb9420de69982eac29a",
-    "nomount": "e5fe8a7f7de1ab209ad5164c2917be0a0bd3b549",
+    "nomount": "d41b3c7ea6ec5316b35032ac6000f4cd086c7c8f",
     "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,14 +35,14 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2700,
+  "kernel_su_git_version": 2701,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-20",
-    "wildkernels": "2c4a043c89dbfa9db35cce85ac248101a7172458",
+    "date": "2026-10-21",
+    "wildkernels": "ba242777386f42686e323375fd31ac6412aa2f91",
     "droidspaces": "700c3564005dd1c57427d9a25e193442a693fca7",
-    "non_kernel_changes": "WildKernels recipe adds root/config diagnostics, FinaSU compatibility and CI changes; existing feature checks retained. External kernel_patches change is Samsung-specific. DroidSpaces changes are userspace/documentation.",
-    "kernelsu": "469c4282e72382388b4598fa022fe8ca91dc9ab5",
+    "non_kernel_changes": "KernelSU upstream changed only the manager manifest. WildKernels changes update CI patch application and dependency pins; its Android 15 SUSFS pin matches the integrated revision. No additional device-kernel changes. DroidSpaces unchanged.",
+    "kernelsu": "4663610011d03771a64e7c36a2aa65bd1794022d",
     "patches": "fa76c90e2cb284e6ce22b0b008ad4dd19820dbb1",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
     "susfs": "4a4cb1be85a4694372d3efb9420de69982eac29a"
