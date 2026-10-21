@@ -2,8 +2,9 @@
 """Fetch exact source commits and apply the reviewed, build-tested delta."""
 import hashlib,json,os,shutil,subprocess,sys
 from pathlib import Path
+from variants import resolve
 w=Path(__file__).resolve().parents[1];root=Path(sys.argv[1]).resolve();root.mkdir(parents=True,exist_ok=True)
-lock=json.loads((w/'sources.lock.json').read_text())
+lock=resolve(w)
 def run(*args):subprocess.run(args,check=True)
 for name,source in lock['sources'].items():
  dest=root/name
@@ -12,7 +13,7 @@ for name,source in lock['sources'].items():
  run('git','-C',str(dest),'remote','add','origin',source['url'])
  run('git','-C',str(dest),'fetch','--depth=1','origin',source['commit'])
  run('git','-C',str(dest),'checkout','--detach','FETCH_HEAD')
- patch=w/'patches'/f'{name}.patch'
+ patch=w/'patches'/f'{"sukisu" if name=="kernelsu" and lock["root_variant"]=="sukisu" else name}.patch'
  if patch.exists() and patch.stat().st_size:
   run('git','-C',str(dest),'apply','--check',str(patch))
   run('git','-C',str(dest),'apply',str(patch))

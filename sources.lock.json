@@ -46,5 +46,17 @@
     "patches": "fa76c90e2cb284e6ce22b0b008ad4dd19820dbb1",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
     "susfs": "4a4cb1be85a4694372d3efb9420de69982eac29a"
+  },
+  "variants": {
+    "sukisu": {
+      "source": {
+        "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
+        "commit": "cc4713dd07562cfae019a3d08812abcc7bb683b1"
+      },
+      "git_version": 3844,
+      "version_code": 41029,
+      "kpm": true,
+      "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
+    }
   }
 }

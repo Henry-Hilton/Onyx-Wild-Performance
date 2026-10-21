@@ -5,6 +5,14 @@
 
 ## Automated builds and releases
 
+Every build produces two root variants: KernelSU and SukiSU Ultra. Both use the
+same kernel base, performance settings, CRC bypass, ABI fixes, SUSFS, NoMount,
+Baseband Guard and remaining shared features. KPM is enabled exclusively in
+SukiSU. Use the matching root manager. Each variant has Auto Slot, Slot A and
+Slot B ZIPs, for six flashable ZIPs per successful release. CI requires both
+variants to pass before publishing and keeps their reports/source archives separate.
+SukiSU and its KPM loader still require hardware testing; no KPM modules are bundled.
+
 Every push to `main` and every manual workflow run builds the pinned sources,
 checks features, validates module symbol CRCs and 15 structure layouts, and
 packages the AnyKernel3 ZIP. Every successful build publishes a uniquely tagged
@@ -21,7 +29,8 @@ The baseline covers the available crDroid Android 17 build; newer firmware ABI
 changes require updating the baseline and validating the new source.
 
 For a Linux build with LLVM 21 and the listed dependencies, run
-`bash scripts/ci_build.sh`. Set `ONYX_BUILD_ROOT` to a fresh directory and `JOBS`
+`bash scripts/ci_build.sh`. Set `ONYX_VARIANT=kernelsu` (default) or `sukisu`,
+`ONYX_BUILD_ROOT` to a fresh directory and `JOBS`
 to the desired parallelism. The workflow can be started using **Actions → Build
 and release kernel → Run workflow**. Dependencies stay pinned so a passing build
 does not silently absorb unreviewed upstream changes.
