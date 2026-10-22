@@ -7,4 +7,4 @@ assert ('CONFIG_KPM=y' in config)==suki,'KPM must be enabled exclusively for Suk
 if '--built' in sys.argv:
  symbols=subprocess.check_output(['llvm-nm-21','--defined-only',str(r/'out/vmlinux')],text=True)
  assert (' do_kpm\n' in symbols)==suki,'KPM implementation does not match variant'
-print('Variant configuration and KPM exclusivity verified')
+print('Variant configuration/linkage verified; SukiSU also requires image backend validation')

@@ -16,3 +16,4 @@ make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM="${LLVM:--21}" headers_install
 make -C "$KERNEL" O="$OUT" ARCH=arm64 LLVM="${LLVM:--21}" -j"${JOBS:-8}" \
   KSU_GIT_VERSION="$KSU_COUNT" KSU_GIT_VERSION_VALID=1 \
   KCFLAGS="-O3 -mtune=cortex-x4" Image.gz modules
+python3 "$(dirname "$SOURCE_LOCK")/patch_kpm.py" "$(dirname "$KERNEL")" "$(dirname "$SOURCE_LOCK")"

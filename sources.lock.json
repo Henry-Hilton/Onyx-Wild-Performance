@@ -2,15 +2,15 @@
   "sources": {
     "kernel": {
       "url": "https://github.com/crdroidandroid/android_kernel_xiaomi_sm8735.git",
-      "commit": "10570812a4878b644e31b47c2f0bd052664cf86d"
+      "commit": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1"
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "4663610011d03771a64e7c36a2aa65bd1794022d"
+      "commit": "6d31a61370838380177dc5c46fb838f6ba7d639a"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "d41b3c7ea6ec5316b35032ac6000f4cd086c7c8f"
+      "commit": "5f70a17bc167b7849eb78bc040a603a3793a4bca"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -22,12 +22,12 @@
     }
   },
   "provenance": {
-    "kernel": "10570812a4878b644e31b47c2f0bd052664cf86d",
-    "crdroid": "10570812a4878b644e31b47c2f0bd052664cf86d",
+    "kernel": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
+    "crdroid": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "4663610011d03771a64e7c36a2aa65bd1794022d",
+    "kernelsu": "6d31a61370838380177dc5c46fb838f6ba7d639a",
     "susfs": "4a4cb1be85a4694372d3efb9420de69982eac29a",
-    "nomount": "d41b3c7ea6ec5316b35032ac6000f4cd086c7c8f",
+    "nomount": "5f70a17bc167b7849eb78bc040a603a3793a4bca",
     "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,14 +35,14 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2701,
+  "kernel_su_git_version": 2702,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-21",
-    "wildkernels": "ba242777386f42686e323375fd31ac6412aa2f91",
+    "date": "2026-10-22",
+    "wildkernels": "fb99605cdd0f32987bea8f1878e0cfedab1ed1ff",
     "droidspaces": "700c3564005dd1c57427d9a25e193442a693fca7",
-    "non_kernel_changes": "KernelSU upstream changed only the manager manifest. WildKernels changes update CI patch application and dependency pins; its Android 15 SUSFS pin matches the integrated revision. No additional device-kernel changes. DroidSpaces unchanged.",
-    "kernelsu": "4663610011d03771a64e7c36a2aa65bd1794022d",
+    "non_kernel_changes": "Integrated the current device base, KernelSU, SukiSU and NoMount revisions. SUSFS, installer, Baseband Guard, external patch collection and DroidSpaces pins unchanged. KPM image backend patching is now required for SukiSU.",
+    "kernelsu": "6d31a61370838380177dc5c46fb838f6ba7d639a",
     "patches": "fa76c90e2cb284e6ce22b0b008ad4dd19820dbb1",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
     "susfs": "4a4cb1be85a4694372d3efb9420de69982eac29a"
@@ -51,12 +51,23 @@
     "sukisu": {
       "source": {
         "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
-        "commit": "cc4713dd07562cfae019a3d08812abcc7bb683b1"
+        "commit": "17ff94d9da24d589a9705227fdda39a1c9045698"
       },
-      "git_version": 3844,
-      "version_code": 41029,
+      "git_version": 3853,
+      "version_code": 41038,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
+  },
+  "kpm_tools": {
+    "source": {
+      "url": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch.git",
+      "commit": "e60c6cfd5cea87cccf9adb7e4d4ba583702d443c"
+    },
+    "payload_source": {
+      "url": "https://github.com/SukiSU-Ultra/SukiSU_patch.git",
+      "commit": "7c6289c95bdc786119b03d150236853b7b4872ca"
+    },
+    "payload_sha256": "396a20777668e85d674a23dd3945815f285332b5358be0bfc97297935e2d130b"
   }
 }

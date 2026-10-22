@@ -20,7 +20,7 @@ jobs:
       - name: Install LLVM 21 and build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y software-properties-common wget gnupg build-essential bc bison flex libssl-dev libelf-dev dwarves zstd lz4 python3-pyelftools python3-yaml
+          sudo apt-get install -y software-properties-common wget gnupg build-essential bc bison flex libssl-dev libelf-dev zlib1g-dev dwarves zstd lz4 python3-pyelftools python3-yaml
           wget -q https://apt.llvm.org/llvm.sh
           sudo bash llvm.sh 21
           sudo apt-get install -y llvm-21 clang-21 lld-21

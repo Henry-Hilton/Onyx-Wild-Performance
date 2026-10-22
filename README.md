@@ -11,7 +11,12 @@ Baseband Guard and remaining shared features. KPM is enabled exclusively in
 SukiSU. Use the matching root manager. Each variant has Auto Slot, Slot A and
 Slot B ZIPs, for six flashable ZIPs per successful release. CI requires both
 variants to pass before publishing and keeps their reports/source archives separate.
-SukiSU and its KPM loader still require hardware testing; no KPM modules are bundled.
+The user confirmed that the initial SukiSU variants boot. KPM requires both
+`CONFIG_KPM=y` and the pinned KernelPatch image backend; the build now applies
+that backend and verifies its metadata and entry hook before packaging. The
+initial v0.2.0 SukiSU release omitted that image step and reported KPM unsupported.
+Backend runtime/module-loading validation on the phone remains pending; no KPM
+modules are bundled. KPM stays disabled in the KernelSU variant.
 
 Every push to `main` and every manual workflow run builds the pinned sources,
 checks features, validates module symbol CRCs and 15 structure layouts, and

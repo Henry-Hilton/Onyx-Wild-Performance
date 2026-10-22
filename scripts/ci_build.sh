@@ -23,6 +23,7 @@ make -C "$ROOT/kernel" O="$ROOT/out" ARCH=arm64 LLVM=-21 headers_install
 make -C "$ROOT/kernel" O="$ROOT/out" ARCH=arm64 LLVM=-21 -j"${JOBS:-2}" \
   KSU_GIT_VERSION="$KSU_COUNT" KSU_GIT_VERSION_VALID=1 KCFLAGS="-O3 -mtune=cortex-x4" Image.gz modules
 python3 "$WORKSPACE/scripts/check_variant.py" "$ROOT" --built
+python3 "$WORKSPACE/scripts/patch_kpm.py" "$ROOT" "$WORKSPACE"
 python3 "$WORKSPACE/scripts/audit_modules.py" --baseline "$WORKSPACE/abi/modules.json" \
   --symvers "$ROOT/out/vmlinux.symvers" --output "$WORKSPACE/dist/crdroid-module-audit.json"
 python3 "$WORKSPACE/scripts/audit_layouts.py" "$WORKSPACE/abi/layouts.json" "$ROOT/out/vmlinux" \

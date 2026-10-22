@@ -14,22 +14,34 @@ assert len(b['structures'])==15 and not b['mismatches']
 lock=resolve(w)
 variant=lock['root_variant']
 label='SukiSU-KPM' if variant=='sukisu' else 'KernelSU'
+backend=json.loads((out/'kpm-backend-validation.json').read_text())
+assert backend['enabled']==lock['kpm_enabled'] and backend['backend_patched']==lock['kpm_enabled']
+assert backend['packaged_image_sha256']==sha(image),'Image changed after backend validation'
+assert backend['compiled_image_sha256']==sha(out/'arch/arm64/boot/Image'),'Backend proof belongs to another build'
+if variant=='sukisu':
+ assert backend['payload_sha256']==lock['kpm_tools']['payload_sha256']
+ assert backend['tool_source_commit']==lock['kpm_tools']['source']['commit']
+ assert backend['payload_source_commit']==lock['kpm_tools']['payload_source']['commit']
+shutil.copy2(out/'kpm-backend-validation.json',dist/'kpm-backend-validation.json')
 notices=r/'source-notices';notices.mkdir(exist_ok=True)
 shutil.copytree(w/'licenses',notices/'licenses',dirs_exist_ok=True)
 shutil.copy2(w/'README.md',notices/'README.md')
 shutil.copy2(w/'scripts/build_exported_source.sh',notices/'build_exported_source.sh')
+shutil.copy2(w/'scripts/patch_kpm.py',notices/'patch_kpm.py')
 (notices/'sources.lock.json').write_text(json.dumps(lock,indent=2)+'\n')
 shutil.copy2(r/'kernelsu/LICENSE',notices/'kernelsu-LICENSE')
 source=dist/f'Onyx-Wild-Performance-{label}-source.tar.gz'
 with tarfile.open(source,'w:gz',dereference=True) as archive:
- for tree in (r/'kernel',notices):
+ for tree in (r/'kernel',notices)+((r/'kpm_tools',r/'kpm_payload') if variant=='sukisu' else ()):
   for folder,dirs,files in os.walk(tree,followlinks=True):
    dirs[:]=sorted(d for d in dirs if d not in ('.git','.github'))
    for file in sorted(files):
     path=Path(folder)/file
+    if tree.name=='kpm_tools' and (file.endswith('.o') or file=='kptools'):continue
     if path.exists() and file!='.git':archive.add(path,arcname=path.relative_to(r),recursive=False)
 manifest={'name':'Onyx Wild Performance','status':'experimental; hardware boot testing pending',
  'root_variant':variant,'kpm_enabled':lock['kpm_enabled'],
+ 'kpm_backend':backend,
  'module_crc_mismatch_policy':'warn and accept, matching gki-clo',
  'kernel_release':(out/'include/config/kernel.release').read_text().strip(),
  'built_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),

@@ -12,6 +12,7 @@ with gzip.open(image,'rb') as handle:
 if len(header)!=64 or header[56:60]!=b'ARM\x64':
     raise SystemExit('Compiled image does not contain an ARM64 Linux Image header')
 assert b'(SUSFS manual hook)' in gzip.decompress(image.read_bytes()), 'Preinit runner hook missing'
+assert 'CONFIG_KPM=y' not in (out/'.config').read_text().splitlines(), 'Use variant packaging for SukiSU'
 audit=json.loads((dist/'crdroid-module-audit.json').read_text())
 layouts=json.loads((dist/'structure-layout-audit.json').read_text())
 feature_report=json.loads((out/'feature-validation.json').read_text())

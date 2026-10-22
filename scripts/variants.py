@@ -10,6 +10,8 @@ def resolve(workspace, variant=None):
   lock['sources']['kernelsu']=copy.deepcopy(pin['source'])
   lock['provenance']['kernelsu']=pin['source']['commit']
   lock['kernel_su_git_version']=pin['git_version']
+  lock['sources']['kpm_tools']=copy.deepcopy(lock['kpm_tools']['source'])
+  lock['sources']['kpm_payload']=copy.deepcopy(lock['kpm_tools']['payload_source'])
  lock['root_variant']=variant
  lock['kpm_enabled']=variant=='sukisu'
  return lock
