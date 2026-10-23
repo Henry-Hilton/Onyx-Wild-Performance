@@ -1,5 +1,5 @@
 diff --git a/kernel/Kbuild b/kernel/Kbuild
-index f9f77af5..4a0befbf 100644
+index f9f77af5..d3375d5a 100644
 --- a/kernel/Kbuild
 +++ b/kernel/Kbuild
 @@ -6,21 +6,9 @@ kernelsu-objs += feature/mount_hide.o
@@ -69,8 +69,8 @@ index f9f77af5..4a0befbf 100644
 -$(info -- $(REPO_NAME) version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
 -
 +# Pinned build identity; never query moving GitHub refs during compilation.
-+KSU_VERSION := 41038
-+KSU_VERSION_FULL := v4.2.1-17ff94d9@onyx
++KSU_VERSION := 41050
++KSU_VERSION_FULL := v4.2.1-3c6ecb97@onyx
  ccflags-y += -DKSU_VERSION=$(KSU_VERSION)
  ccflags-y += -DKSU_VERSION_FULL=\"$(KSU_VERSION_FULL)\"
 +$(info -- SukiSU pinned version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
