@@ -1,5 +1,5 @@
 diff --git a/kernel/Kbuild b/kernel/Kbuild
-index f9f77af5..d3375d5a 100644
+index 7864194e..d1058314 100644
 --- a/kernel/Kbuild
 +++ b/kernel/Kbuild
 @@ -6,21 +6,9 @@ kernelsu-objs += feature/mount_hide.o
@@ -25,7 +25,7 @@ index f9f77af5..d3375d5a 100644
  
  kernelsu-objs += infra/file_wrapper.o
  kernelsu-objs += infra/event_queue.o
-@@ -76,9 +64,6 @@ endif
+@@ -77,9 +65,6 @@ endif
  ifeq ($(CONFIG_KSU_DEBUG),y)
  ccflags-y += -DCONFIG_KSU_DEBUG=1
  endif
@@ -35,7 +35,7 @@ index f9f77af5..d3375d5a 100644
  endif
  
  obj-$(CONFIG_KPM) += extension/kpm/kpm.o
-@@ -147,37 +132,12 @@ obj-$(CONFIG_KSU) += kernelsu.o
+@@ -148,37 +133,12 @@ obj-$(CONFIG_KSU) += kernelsu.o
  
  MDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
  
@@ -53,7 +53,7 @@ index f9f77af5..d3375d5a 100644
 -KSU_SRC := $(if $(wildcard $(KSU_SRC)/../.git),$(KSU_SRC),$(MDIR))
 -
 -git_short_sha    = $(shell cd $(KSU_SRC) && $(GIT_BIN) rev-parse --short=8 HEAD 2>/dev/null)
--git_branch       = $(shell cd $(KSU_SRC) && $(GIT_BIN) rev-parse --abbrev-ref HEAD 2>/dev/null)
+-git_branch       = $(if $(strip $(KSU_BUILD_REF)),$(KSU_BUILD_REF),$(shell cd $(KSU_SRC) && $(GIT_BIN) rev-parse --abbrev-ref HEAD 2>/dev/null))
 -git_commit_count = $(shell cd $(KSU_SRC) && $(GIT_BIN) rev-list --count $(REPO_BRANCH) 2>/dev/null)
 -git_latest_tag   = $(shell cd $(KSU_SRC) && $(GIT_BIN) describe --tags --abbrev=0 2>/dev/null | sed 's/^v//')
 -
@@ -63,14 +63,14 @@ index f9f77af5..d3375d5a 100644
 -KSU_GITHUB_VER   := $(shell $(CURL_BIN) -s "$(GITHUB_API_BASE)/releases/latest" 2>/dev/null | grep '"tag_name":' | sed -E 's/.*"v?([^"]+)".*/\1/')
 -GITHUB_COMMITS   := $(shell $(CURL_BIN) -sI "$(GITHUB_API_BASE)/commits?sha=$(REPO_BRANCH)&per_page=1" 2>/dev/null | grep -i "link:" | sed -n 's/.*page=\([0-9]*\)>; rel="last".*/\1/p')
 -LOCAL_COUNT     := $(if $(GITHUB_COMMITS),$(GITHUB_COMMITS),$(git_commit_count))
--KSU_VERSION     := $(if $(LOCAL_COUNT),$(shell expr $(VERSION_BASE) + $(LOCAL_COUNT) - $(VERSION_OFFSET)),41000)
+-KSU_VERSION     := $(if $(LOCAL_COUNT),$(shell expr $(VERSION_BASE) + $(LOCAL_COUNT) - $(VERSION_OFFSET)),$(VERSION_BASE))
 -VERSION_TAG     := $(or $(KSU_GITHUB_VER),$(git_latest_tag),4.2.1)
 -KSU_VERSION_FULL := $(if $(call git_short_sha),v$(VERSION_TAG)-$(call git_short_sha)@$(call git_branch),v$(VERSION_TAG)-$(REPO_NAME)-unknown@unknown)
 -$(info -- $(REPO_NAME) version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
 -
 +# Pinned build identity; never query moving GitHub refs during compilation.
-+KSU_VERSION := 41050
-+KSU_VERSION_FULL := v4.2.1-3c6ecb97@onyx
++KSU_VERSION := 41074
++KSU_VERSION_FULL := v4.2.1-72eea67e@onyx
  ccflags-y += -DKSU_VERSION=$(KSU_VERSION)
  ccflags-y += -DKSU_VERSION_FULL=\"$(KSU_VERSION_FULL)\"
 +$(info -- SukiSU pinned version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
@@ -214,7 +214,7 @@ index 05888d7b..208e7f0e 100644
 +
  # Keep a new line here!! Because someone may append config
 diff --git a/kernel/core/init.c b/kernel/core/init.c
-index b0f086a5..9e9a35b7 100644
+index a603f2c1..f493fca6 100644
 --- a/kernel/core/init.c
 +++ b/kernel/core/init.c
 @@ -6,6 +6,7 @@
@@ -234,13 +234,14 @@ index b0f086a5..9e9a35b7 100644
  #include "runtime/ksud.h"
  #include "runtime/ksud_boot.h"
  #include "feature/sulog.h"
-@@ -22,23 +21,17 @@
+@@ -22,24 +21,18 @@
  #include "ksu.h"
  #include "infra/file_wrapper.h"
  #include "selinux/selinux.h"
 -#include "hook/syscall_hook.h"
  #include "feature/adb_root.h"
  #include "feature/selinux_hide.h"
+-#include "feature/avc_spoof.h"
 -#include "feature/uts_spoof.h"
 -#include "feature/shell_su_adb_only.h"
  #include "feature/module_blacklist.h"
@@ -250,6 +251,7 @@ index b0f086a5..9e9a35b7 100644
 +#include "infra/symbol_resolver.h"
  #include "extension/extension.h"
 +#include "feature/uts_spoof.h"
++#include "feature/avc_spoof.h"
 +#include "hook/setuid_hook.h"
 +#include "feature/sucompat.h"
  
@@ -263,7 +265,7 @@ index b0f086a5..9e9a35b7 100644
  
  // workaround for A12-5.10 kernel
  // Some third-party kernel (e.g. linegaeOS) uses wrong toolchain, which supports
-@@ -76,7 +69,6 @@ __attribute__((naked)) int __init kernelsu_init_early(void)
+@@ -77,7 +70,6 @@ __attribute__((naked)) int __init kernelsu_init_early(void)
  #endif
  
  struct cred *ksu_cred;
@@ -271,7 +273,7 @@ index b0f086a5..9e9a35b7 100644
  
  #ifdef CONFIG_KSU_DEBUG
  bool allow_shell = true;
-@@ -88,42 +80,14 @@ module_param(allow_shell, bool, 0);
+@@ -89,42 +81,14 @@ module_param(allow_shell, bool, 0);
  bool ksu_no_custom_rc = false;
  module_param_named(norc, ksu_no_custom_rc, bool, 0);
  
@@ -316,7 +318,7 @@ index b0f086a5..9e9a35b7 100644
  #ifdef CONFIG_KSU_DEBUG
      pr_alert("*************************************************************");
      pr_alert("**     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE    **");
-@@ -133,6 +97,7 @@ int __init kernelsu_init(void)
+@@ -134,6 +98,7 @@ int __init kernelsu_init(void)
      pr_alert("**     NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE    **");
      pr_alert("*************************************************************");
  #endif
@@ -324,7 +326,7 @@ index b0f086a5..9e9a35b7 100644
      if (allow_shell) {
          pr_alert("shell is allowed at init!");
      }
-@@ -143,92 +108,52 @@ int __init kernelsu_init(void)
+@@ -144,94 +109,53 @@ int __init kernelsu_init(void)
          return -ENOSYS;
      }
  
@@ -346,6 +348,7 @@ index b0f086a5..9e9a35b7 100644
 -    ksu_adb_root_init();
 -    ksu_lsm_hook_init();
 -    ksu_selinux_hide_init();
+-    ksu_avc_spoof_init();
 -    ksu_shell_su_adb_only_init();
 -
 -    ksu_supercalls_init();
@@ -364,55 +367,57 @@ index b0f086a5..9e9a35b7 100644
 -        // with KSU SELinux domain before enforcing SELinux, so it
 -        // can continue to access /data/app etc. after enforcement.
 -        escape_to_root_for_init();
-+    ksu_supercalls_init();
- 
+-
 -        ksu_allowlist_init();
 -        ksu_load_allow_list();
 -        ksu_dynamic_manager_load();
-+    ksu_sucompat_init();
++    ksu_supercalls_init();
  
 -        ksu_syscall_hook_manager_init();
-+    ksu_setuid_hook_init();
++    ksu_sucompat_init();
  
 -        ksu_throne_tracker_init();
 -        ksu_observer_init();
 -        ksu_file_wrapper_init();
-+    ksu_sulog_init();
++    ksu_setuid_hook_init();
  
 -        ksu_boot_completed = true;
 -        track_throne(false);
-+    ksu_adb_root_init();
++    ksu_sulog_init();
  
+-        ksu_avc_spoof_late_init();
 -        ksu_feature_apply_forced();
 -        ksu_extension_apply_forced();
-+    ksu_selinux_hide_init();
++    ksu_adb_root_init();
  
 -        if (!getenforce()) {
 -            pr_info("Permissive SELinux, enforcing\n");
 -            setenforce(true);
 -        }
-+    ksu_shell_su_adb_only_init();
++    ksu_selinux_hide_init();
++    ksu_avc_spoof_init();
  
 -    } else {
 -        ksu_syscall_hook_manager_init();
-+    ksu_allowlist_init();
++    ksu_shell_su_adb_only_init();
  
 -        ksu_allowlist_init();
-+    ksu_throne_tracker_init();
++    ksu_allowlist_init();
  
 -        ksu_throne_tracker_init();
-+    ksu_ksud_init();
++    ksu_throne_tracker_init();
  
 -        ksu_ksud_init();
++    ksu_ksud_init();
+ 
+-        ksu_preinit_init();
 +    ksu_init_symbol_resolver();
 +    ksu_preinit_init();
  
--        ksu_preinit_init();
-+    ksu_file_wrapper_init();
- 
 -        ksu_file_wrapper_init();
 -    }
--
++    ksu_file_wrapper_init();
+ 
 -#ifdef MODULE
 -#ifndef CONFIG_KSU_DEBUG
 -    kobject_del(&THIS_MODULE->mkobj.kobj);
@@ -437,11 +442,12 @@ index b0f086a5..9e9a35b7 100644
  
      // Wait for any in-flight RCU readers (e.g. handler traversing allow_list)
      synchronize_rcu();
-@@ -241,13 +166,17 @@ void __exit kernelsu_exit(void)
+@@ -244,14 +168,18 @@ void __exit kernelsu_exit(void)
      ksu_allowlist_exit();
  
      ksu_shell_su_adb_only_exit();
 +
+     ksu_avc_spoof_exit();
      ksu_selinux_hide_exit();
 -    ksu_lsm_hook_exit();
 +
@@ -707,7 +713,7 @@ index 7e337abf..8b6e0b3c 100644
      pr_info("handle umount for uid: %d, pid: %d\n", new_uid, current->pid);
  
 diff --git a/kernel/feature/selinux_hide.c b/kernel/feature/selinux_hide.c
-index 459f99f9..6cd0659d 100644
+index 8f23888b..6cd0659d 100644
 --- a/kernel/feature/selinux_hide.c
 +++ b/kernel/feature/selinux_hide.c
 @@ -1,9 +1,5 @@
@@ -876,7 +882,7 @@ index 459f99f9..6cd0659d 100644
  
      fake_status = new_page;
      pr_info("initialize_fake_status initialized: sequence=%d, policyload=%d, enforcing=%d\n", new_status->sequence,
-@@ -361,120 +309,32 @@ out:
+@@ -361,117 +309,32 @@ out:
      mutex_unlock(&selinux_state.status_lock);
  }
  
@@ -886,10 +892,7 @@ index 459f99f9..6cd0659d 100644
 +void ksu_selinux_hide_handle_second_stage()
  {
 -    if (likely(current_uid().val >= 10000 && ksu_selinux_hide_enabled)) {
--        void *data;
--        mutex_lock(&selinux_state.status_lock);
--        data = fake_status;
--        mutex_unlock(&selinux_state.status_lock);
+-        void *data = fake_status;
 -        if (data) {
 -            filp->private_data = data;
 -            return 0;
@@ -1010,7 +1013,7 @@ index 459f99f9..6cd0659d 100644
  }
  
  static int selinux_hide_feature_get(u64 *value)
-@@ -499,10 +359,11 @@ static int selinux_hide_feature_set(u64 value)
+@@ -496,10 +359,11 @@ static int selinux_hide_feature_set(u64 value)
          }
      } else {
          if (ksu_selinux_hide_running) {
@@ -1023,7 +1026,7 @@ index 459f99f9..6cd0659d 100644
      mutex_unlock(&selinux_hide_mutex);
      return ret;
  }
-@@ -514,65 +375,18 @@ static const struct ksu_feature_handler selinux_hide_handler = {
+@@ -511,65 +375,18 @@ static const struct ksu_feature_handler selinux_hide_handler = {
      .set_handler = selinux_hide_feature_set,
  };
  
@@ -1090,7 +1093,7 @@ index 459f99f9..6cd0659d 100644
          ksu_selinux_hide_running = false;
      }
      mutex_unlock(&selinux_hide_mutex);
-@@ -1254,4 +1068,4 @@ out:
+@@ -1251,4 +1068,4 @@ out:
  allow:
      avd->allowed = 0xffffffff;
      goto out;
@@ -1749,22 +1752,27 @@ index 19ae9328..cc03b109 100644
  extern struct selinux_policy *backup_sepolicy;
  extern bool ksu_no_custom_rc;
  
-diff --git a/kernel/policy/allowlist.c b/kernel/policy/allowlist.c
-index e5735d67..16a487b8 100644
---- a/kernel/policy/allowlist.c
-+++ b/kernel/policy/allowlist.c
-@@ -303,10 +303,7 @@ bool ksu_uid_should_umount(uid_t uid)
+diff --git a/kernel/manager/pkg_observer.c b/kernel/manager/pkg_observer.c
+index ad573bde..cdea8276 100644
+--- a/kernel/manager/pkg_observer.c
++++ b/kernel/manager/pkg_observer.c
+@@ -8,6 +8,7 @@
+ #include <linux/rculist.h>
+ #include <linux/task_work.h>
+ #include <linux/version.h>
++#include <linux/susfs.h>
+ #include "klog.h" // IWYU pragma: keep
+ #include "manager/throne_tracker.h"
+ 
+@@ -46,6 +47,8 @@ static void ksu_defer_track_throne(void)
  {
-     struct app_profile *profile;
-     bool res;
--    if (likely(ksu_is_manager_appid_valid()) && unlikely(ksu_get_manager_appid() == uid % PER_USER_RANGE)) {
--        // we should not umount on manager!
--        return false;
--    }
+     struct callback_head *cb;
+ 
++    susfs_parse_priority_app_strings();
 +
- #ifdef CONFIG_KSU_DISABLE_POLICY
-     return !__ksu_is_allow_uid(uid);
- #else
+     if (current->flags & PF_KTHREAD)
+         goto skipped;
+ 
 diff --git a/kernel/policy/app_profile.c b/kernel/policy/app_profile.c
 index 01f13a2f..11fdbc5f 100644
 --- a/kernel/policy/app_profile.c
@@ -2141,10 +2149,10 @@ index 34eb056b..7793cea8 100644
 -
 -#endif // __KSU_H_PREINIT
 diff --git a/kernel/runtime/boot_event.c b/kernel/runtime/boot_event.c
-index 5e5c4b19..0c337412 100644
+index 2932a182..9e70ef56 100644
 --- a/kernel/runtime/boot_event.c
 +++ b/kernel/runtime/boot_event.c
-@@ -15,6 +15,7 @@
+@@ -16,6 +16,7 @@
  
  bool ksu_module_mounted __read_mostly = false;
  bool ksu_boot_completed __read_mostly = false;
@@ -2152,7 +2160,7 @@ index 5e5c4b19..0c337412 100644
  
  void on_post_fs_data(void)
  {
-@@ -32,7 +33,10 @@ void on_post_fs_data(void)
+@@ -33,7 +34,10 @@ void on_post_fs_data(void)
      ksu_dynamic_manager_load();
      ksu_observer_init();
      // Sanity check for safe mode only needs early-boot input samples.
@@ -2934,7 +2942,7 @@ index 635ec01c..c7b28b86 100644
  int ksu_sulog_emit_grant_root(int retval, __u32 uid, __u32 euid, gfp_t gfp);
  
 diff --git a/kernel/supercall/dispatch.c b/kernel/supercall/dispatch.c
-index 35d0f6b1..aa171434 100644
+index 35d0f6b1..0193cc0d 100644
 --- a/kernel/supercall/dispatch.c
 +++ b/kernel/supercall/dispatch.c
 @@ -8,6 +8,8 @@
@@ -3103,7 +3111,7 @@ index 35d0f6b1..aa171434 100644
      }
      if (copy_to_user(arg, &cmd, sizeof(cmd))) {
          pr_err("manage_mark: copy_to_user failed\n");
-@@ -536,6 +500,87 @@ static int do_manage_mark(void __user *arg)
+@@ -536,6 +500,90 @@ static int do_manage_mark(void __user *arg)
      return 0;
  }
  
@@ -3165,6 +3173,9 @@ index 35d0f6b1..aa171434 100644
 +                susfs_add_sus_map(arg);
 +                return 0;
 +#endif // #ifdef CONFIG_KSU_SUSFS_SUS_MAP
++            case CMD_SUSFS_SET_PRIORITY_UID_FILTER:
++                susfs_set_priority_uid_filter(arg);
++                return 0;
 +            case CMD_SUSFS_ENABLE_AVC_LOG_SPOOFING:
 +                susfs_set_avc_log_spoofing(arg);
 +                return 0;
