@@ -1,5 +1,5 @@
 diff --git a/kernel/Kbuild b/kernel/Kbuild
-index 7864194e..d1058314 100644
+index d0a0e14f..73b831ac 100644
 --- a/kernel/Kbuild
 +++ b/kernel/Kbuild
 @@ -6,21 +6,9 @@ kernelsu-objs += feature/mount_hide.o
@@ -25,7 +25,7 @@ index 7864194e..d1058314 100644
  
  kernelsu-objs += infra/file_wrapper.o
  kernelsu-objs += infra/event_queue.o
-@@ -77,9 +65,6 @@ endif
+@@ -81,9 +69,6 @@ endif
  ifeq ($(CONFIG_KSU_DEBUG),y)
  ccflags-y += -DCONFIG_KSU_DEBUG=1
  endif
@@ -34,8 +34,8 @@ index 7864194e..d1058314 100644
 -endif
  endif
  
- obj-$(CONFIG_KPM) += extension/kpm/kpm.o
-@@ -148,37 +133,12 @@ obj-$(CONFIG_KSU) += kernelsu.o
+ ifeq ($(CONFIG_KPM),y)
+@@ -165,37 +150,12 @@ obj-$(CONFIG_KSU) += kernelsu.o
  
  MDIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
  
@@ -69,8 +69,8 @@ index 7864194e..d1058314 100644
 -$(info -- $(REPO_NAME) version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
 -
 +# Pinned build identity; never query moving GitHub refs during compilation.
-+KSU_VERSION := 41074
-+KSU_VERSION_FULL := v4.2.1-72eea67e@onyx
++KSU_VERSION := 41084
++KSU_VERSION_FULL := v4.2.1-3b58d46f@onyx
  ccflags-y += -DKSU_VERSION=$(KSU_VERSION)
  ccflags-y += -DKSU_VERSION_FULL=\"$(KSU_VERSION_FULL)\"
 +$(info -- SukiSU pinned version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
@@ -2942,7 +2942,7 @@ index 635ec01c..c7b28b86 100644
  int ksu_sulog_emit_grant_root(int retval, __u32 uid, __u32 euid, gfp_t gfp);
  
 diff --git a/kernel/supercall/dispatch.c b/kernel/supercall/dispatch.c
-index 35d0f6b1..0193cc0d 100644
+index 3ce43fc0..a886c5cd 100644
 --- a/kernel/supercall/dispatch.c
 +++ b/kernel/supercall/dispatch.c
 @@ -8,6 +8,8 @@
@@ -2962,7 +2962,7 @@ index 35d0f6b1..0193cc0d 100644
  #include "policy/app_profile.h"
  #include "sulog/event.h"
  #include "sulog/fd.h"
-@@ -53,19 +54,13 @@ static int do_get_info(void __user *arg)
+@@ -54,19 +55,13 @@ static int do_get_info(void __user *arg)
  
  #ifdef MODULE
      cmd.flags |= KSU_GET_INFO_FLAG_LKM;
@@ -2983,7 +2983,7 @@ index 35d0f6b1..0193cc0d 100644
          cmd.flags |= KSU_GET_INFO_FLAG_PREINIT;
      }
  #if KSU_IS_PR_BUILD
-@@ -88,17 +83,11 @@ static int do_get_info_legacy(void __user *arg)
+@@ -90,17 +85,11 @@ static int do_get_info_legacy(void __user *arg)
  
  #ifdef MODULE
      cmd.flags |= KSU_GET_INFO_FLAG_LKM;
@@ -3001,7 +3001,7 @@ index 35d0f6b1..0193cc0d 100644
  #if KSU_IS_PR_BUILD
      cmd.flags |= KSU_GET_INFO_FLAG_PR_BUILD;
  #endif
-@@ -129,12 +118,8 @@ static int do_report_event(void __user *arg)
+@@ -133,12 +122,8 @@ static int do_report_event(void __user *arg)
          services_started = false;
          if (!post_fs_data_lock) {
              post_fs_data_lock = true;
@@ -3016,7 +3016,7 @@ index 35d0f6b1..0193cc0d 100644
          }
          break;
      }
-@@ -142,12 +127,9 @@ static int do_report_event(void __user *arg)
+@@ -146,12 +131,9 @@ static int do_report_event(void __user *arg)
          static bool boot_complete_lock = false;
          if (!boot_complete_lock) {
              boot_complete_lock = true;
@@ -3032,7 +3032,7 @@ index 35d0f6b1..0193cc0d 100644
          }
          break;
      }
-@@ -401,7 +383,6 @@ static int do_set_app_profile(void __user *arg)
+@@ -405,7 +387,6 @@ static int do_set_app_profile(void __user *arg)
      ret = ksu_set_app_profile(&cmd.profile);
      if (!ret) {
          ksu_persistent_allow_list();
@@ -3040,7 +3040,7 @@ index 35d0f6b1..0193cc0d 100644
      }
      return ret;
  }
-@@ -484,49 +465,32 @@ static int do_manage_mark(void __user *arg)
+@@ -488,49 +469,32 @@ static int do_manage_mark(void __user *arg)
      }
  
      switch (cmd.operation) {
@@ -3111,7 +3111,7 @@ index 35d0f6b1..0193cc0d 100644
      }
      if (copy_to_user(arg, &cmd, sizeof(cmd))) {
          pr_err("manage_mark: copy_to_user failed\n");
-@@ -536,6 +500,90 @@ static int do_manage_mark(void __user *arg)
+@@ -540,6 +504,90 @@ static int do_manage_mark(void __user *arg)
      return 0;
  }
  

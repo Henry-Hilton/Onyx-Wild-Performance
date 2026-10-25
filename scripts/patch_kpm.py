@@ -1,6 +1,6 @@
 """Install and inspect the real KPM image backend; CONFIG_KPM alone is insufficient."""
 from pathlib import Path
-import gzip,hashlib,json,os,secrets,subprocess,sys
+import gzip,hashlib,json,os,re,secrets,subprocess,sys
 r,w=map(Path,sys.argv[1:]);out=r/'out';lock=json.loads((w/'sources.lock.json').read_text())
 variant=os.environ.get('ONYX_VARIANT',lock.get('root_variant','kernelsu'))
 enabled='CONFIG_KPM=y' in (out/'.config').read_text().splitlines()
@@ -15,8 +15,20 @@ if enabled:
   if (repo/'.git').exists():
    assert subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True).strip()==expected
  payload_bytes=payload.read_bytes();assert sha(payload_bytes)==pin['payload_sha256']
- for symbol in (b'sukisu_kpm_version',b'sukisu_kpm_load_module_path',b'sukisu_kpm_unload_module'):
-  assert symbol in payload_bytes,'Payload lacks SukiSU KPM hooks'
+ for symbol in (b'sukisu_kpm_supercall_install',b'__arm64_sys_truncate'):
+  assert symbol in payload_bytes,'Payload lacks SukiSU KPM bridge'
+ # The bridge replaced the legacy stub hooks. Require the pinned kernel and
+ # backend sources to agree on every public framing tag and ABI version.
+ headers=[(r/'kernel/drivers/kernelsu/extension/kpm/bridge.h').read_text(),
+          (tools/'kernel/patch/sukisu/supercall.h').read_text()]
+ framing={}
+ for name in ('SUKISU_KPM_SUPERCALL_MAGIC','SUKISU_KPM_SUPERCALL_MAGIC2',
+              'SUKISU_KPM_SUPERCALL_MAGIC3','SUKISU_KPM_ABI_VERSION'):
+  values=[re.search(r'^#define\s+'+name+r'\s+(0x[0-9a-fA-F]+|[0-9]+)',h,re.M) for h in headers]
+  assert all(values),'Missing KPM bridge definition: '+name
+  parsed=[int(v[1],0) for v in values]
+  assert parsed[0]==parsed[1],'KPM bridge mismatch: '+name
+  framing[name]=parsed[0]
  subprocess.run(['make','-C',str(tools/'tools'),'-j2'],check=True,stdout=subprocess.DEVNULL)
  tool=tools/'tools/kptools';patched=raw.with_name('Image.kpm')
  unpatched=subprocess.run([str(tool),'-l','-i',str(raw)],text=True,capture_output=True,check=True).stdout
@@ -35,7 +47,7 @@ if enabled:
  target=4+(imm<<2)
  assert 0<=target<len(data) and data[4:8]!=original[4:8],'KPM entry hook missing'
  compressed.write_bytes(gzip.compress(data,compresslevel=9,mtime=0))
- report.update(backend_patched=True,metadata_offset=offset,entry_target=target,payload_sha256=sha(payload_bytes),tool_source_commit=pin['source']['commit'],payload_source_commit=pin['payload_source']['commit'],patched_image_sha256=sha(data),negative_control='unpatched image: patched=false',inspection='patched=true; arch=arm64')
+ report.update(backend_patched=True,bridge_framing=framing,metadata_offset=offset,entry_target=target,payload_sha256=sha(payload_bytes),tool_source_commit=pin['source']['commit'],payload_source_commit=pin['payload_source']['commit'],patched_image_sha256=sha(data),negative_control='unpatched image: patched=false',inspection='patched=true; arch=arm64')
 else:
  assert b'KP1158\0\0' not in gzip.decompress(compressed.read_bytes()),'Unexpected backend in KernelSU'
 report['packaged_image_sha256']=sha(compressed.read_bytes())

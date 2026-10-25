@@ -6,7 +6,7 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "528bafc5696196f3a9500cee2e7e18497421cd32"
+      "commit": "75e179d378d7aaa0de8946358a3384444c3e36b0"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
@@ -25,7 +25,7 @@
     "kernel": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "crdroid": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "528bafc5696196f3a9500cee2e7e18497421cd32",
+    "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
     "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895",
     "nomount": "bf1847f98fed382369c43bfd652cd93774b9b8e3",
     "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
@@ -35,26 +35,27 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2704,
+  "kernel_su_git_version": 2705,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "wildkernels": "222173a6397e27bcc6461d4600c3ecb5d8ac61da",
-    "droidspaces": "21be5ba910da7bb2d92138481e26c5e8710a43ad",
-    "non_kernel_changes": "Integrated KernelSU and SukiSU updates plus SUSFS priority UID filtering and lock cleanup. Retained manual preinit, shared ABI/CRC bypass and SukiSU KPM backend. Device base and NoMount unchanged. Other reviewed upstream changes affect OnePlus-specific patches, DroidSpaces app/userspace and older-kernel SUSFS CI compatibility; none require Onyx kernel changes.",
-    "kernelsu": "528bafc5696196f3a9500cee2e7e18497421cd32",
+    "droidspaces": "64d53d17e765dad3028171204220f4d1134c7e37",
+    "non_kernel_changes": "Updated root sources and matching KPM bridge/backend. Device branch reset to an older divergent history missing 210 commits; retain current base. Its unique videodev2 header fix is already identical. SUSFS and NoMount unchanged.",
+    "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
     "patches": "159a8f3b93af582b07d0d44bfa7d08b96d667ec0",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
-    "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895"
+    "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895",
+    "device_branch_head": "d0881fd7905872a11cd70bc46b37849135aa9a71"
   },
   "variants": {
     "sukisu": {
       "source": {
         "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
-        "commit": "72eea67e2307cb9d257a4bbd8dd6e64f10724bc5"
+        "commit": "3b58d46f7e109e49d4133d6c04636f724bd65983"
       },
-      "git_version": 3889,
-      "version_code": 41074,
+      "git_version": 3899,
+      "version_code": 41084,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
@@ -62,12 +63,12 @@
   "kpm_tools": {
     "source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch.git",
-      "commit": "e60c6cfd5cea87cccf9adb7e4d4ba583702d443c"
+      "commit": "40ce8bea970e25fac9926a220730cf5a2331e3d9"
     },
     "payload_source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_patch.git",
-      "commit": "7c6289c95bdc786119b03d150236853b7b4872ca"
+      "commit": "191febb85b294f13b6c0bc12ef2c956a95e84af6"
     },
-    "payload_sha256": "396a20777668e85d674a23dd3945815f285332b5358be0bfc97297935e2d130b"
+    "payload_sha256": "b7587b5b70dfca97afe70cde24dfe84b086caacd8f10fd05014103f57e40326f"
   }
 }
