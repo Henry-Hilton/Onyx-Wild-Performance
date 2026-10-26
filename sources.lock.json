@@ -14,7 +14,7 @@
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
-      "commit": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905"
+      "commit": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082"
     },
     "anykernel": {
       "url": "https://github.com/WildKernels/AnyKernel3.git",
@@ -28,7 +28,7 @@
     "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
     "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895",
     "nomount": "bf1847f98fed382369c43bfd652cd93774b9b8e3",
-    "bbg": "a54e0dc6cf0aff4dd87fec49644a02d2eb612905",
+    "bbg": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
     "anykernel": "e1e9dce98430c5c6f231f7094a8c7f4ecaf50948"
@@ -38,10 +38,10 @@
   "kernel_su_git_version": 2705,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-26",
+    "date": "2026-10-27",
     "wildkernels": "222173a6397e27bcc6461d4600c3ecb5d8ac61da",
-    "droidspaces": "64d53d17e765dad3028171204220f4d1134c7e37",
-    "non_kernel_changes": "Updated root sources and matching KPM bridge/backend. Device branch reset to an older divergent history missing 210 commits; retain current base. Its unique videodev2 header fix is already identical. SUSFS and NoMount unchanged.",
+    "droidspaces": "d0b3a2e1fac8d238f78119879811119be35d32f4",
+    "non_kernel_changes": "Updated SukiSU and paired KPM ABI v2 backend with event-aware module loading; updated Baseband Guard SELinux compatibility detection. KernelSU, SUSFS, NoMount and installer unchanged. Retain newer device base after upstream history reset, as reviewed October 26. DroidSpaces changes are app/userspace only.",
     "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
     "patches": "159a8f3b93af582b07d0d44bfa7d08b96d667ec0",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
@@ -52,10 +52,10 @@
     "sukisu": {
       "source": {
         "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
-        "commit": "3b58d46f7e109e49d4133d6c04636f724bd65983"
+        "commit": "96ceb4a42c50e27199a094264f62cfbafee77fa0"
       },
-      "git_version": 3899,
-      "version_code": 41084,
+      "git_version": 3910,
+      "version_code": 41095,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
@@ -63,12 +63,12 @@
   "kpm_tools": {
     "source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch.git",
-      "commit": "40ce8bea970e25fac9926a220730cf5a2331e3d9"
+      "commit": "d958d2582fe3b7eaaeaf238b3bf9af4507a81174"
     },
     "payload_source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_patch.git",
-      "commit": "191febb85b294f13b6c0bc12ef2c956a95e84af6"
+      "commit": "1aaf4283e03b0a2861bf8db1e58624028db23a85"
     },
-    "payload_sha256": "b7587b5b70dfca97afe70cde24dfe84b086caacd8f10fd05014103f57e40326f"
+    "payload_sha256": "ab020f31ca1c058603917e46d8a6691fbce0dd5cdc135a9cd8dc780e89472716"
   }
 }
