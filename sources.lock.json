@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "75e179d378d7aaa0de8946358a3384444c3e36b0"
+      "commit": "10efe6648aa52e0497bbd686f940832ad05848cf"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "bf1847f98fed382369c43bfd652cd93774b9b8e3"
+      "commit": "9c69668eefdc524c6155f7925cc7649200c6d737"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "crdroid": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
-    "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895",
-    "nomount": "bf1847f98fed382369c43bfd652cd93774b9b8e3",
+    "kernelsu": "10efe6648aa52e0497bbd686f940832ad05848cf",
+    "susfs": "0606e19afae93ffc88e53883dbf3cfced62a7b59",
+    "nomount": "9c69668eefdc524c6155f7925cc7649200c6d737",
     "bbg": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,27 +35,27 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2705,
+  "kernel_su_git_version": 2706,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-10-27",
-    "wildkernels": "222173a6397e27bcc6461d4600c3ecb5d8ac61da",
-    "droidspaces": "d0b3a2e1fac8d238f78119879811119be35d32f4",
-    "non_kernel_changes": "Updated SukiSU and paired KPM ABI v2 backend with event-aware module loading; updated Baseband Guard SELinux compatibility detection. KernelSU, SUSFS, NoMount and installer unchanged. Retain newer device base after upstream history reset, as reviewed October 26. DroidSpaces changes are app/userspace only.",
-    "kernelsu": "75e179d378d7aaa0de8946358a3384444c3e36b0",
-    "patches": "159a8f3b93af582b07d0d44bfa7d08b96d667ec0",
+    "date": "2026-10-28",
+    "wildkernels": "5cbe70e8107e59fecfb0839b053906c4c0b34095",
+    "droidspaces": "4344dc5fc4ab981f1cf2df54c93bf32a6ebbdc85",
+    "non_kernel_changes": "Updated root sources, NoMount UID exclusion/readdir fixes and paired KPM pins. Retain current device base after previously reviewed history reset. WildKernels changes cover its CI compatibility and other kernel lines; external patch collection changes affect 5.10/5.15 BBR and next root integrations. DroidSpaces changes are app/userspace only. Integrated current SUSFS: priority UID refresh moved to deferred task work and bitmap RCU synchronization updated. GitLab API used while Git endpoint was overloaded.",
+    "kernelsu": "10efe6648aa52e0497bbd686f940832ad05848cf",
+    "patches": "c78291aeb0dca025f21e6b197e0aa4fde42e065d",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
-    "susfs": "c51cd8aad3f7e2f8c48bc3bda88cc68cf7d82895",
+    "susfs": "0606e19afae93ffc88e53883dbf3cfced62a7b59",
     "device_branch_head": "d0881fd7905872a11cd70bc46b37849135aa9a71"
   },
   "variants": {
     "sukisu": {
       "source": {
         "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
-        "commit": "96ceb4a42c50e27199a094264f62cfbafee77fa0"
+        "commit": "29f8b18d08dae3be66c0c3cd364536827df0a378"
       },
-      "git_version": 3910,
-      "version_code": 41095,
+      "git_version": 3913,
+      "version_code": 41098,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
@@ -63,12 +63,12 @@
   "kpm_tools": {
     "source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch.git",
-      "commit": "d958d2582fe3b7eaaeaf238b3bf9af4507a81174"
+      "commit": "1c5b608916357ac86a94cc736e235db1fac4a29d"
     },
     "payload_source": {
       "url": "https://github.com/SukiSU-Ultra/SukiSU_patch.git",
-      "commit": "1aaf4283e03b0a2861bf8db1e58624028db23a85"
+      "commit": "eec45788c9a115e5498040298133336d6b6071dd"
     },
-    "payload_sha256": "ab020f31ca1c058603917e46d8a6691fbce0dd5cdc135a9cd8dc780e89472716"
+    "payload_sha256": "14fc6564fa092afe4a2293268cd061da64a20f61dc91396a404daf13d053f5ca"
   }
 }

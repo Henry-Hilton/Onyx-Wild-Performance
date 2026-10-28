@@ -1,5 +1,5 @@
 diff --git a/kernel/Kbuild b/kernel/Kbuild
-index d0a0e14f..a78af6c6 100644
+index d0a0e14f..a17002f2 100644
 --- a/kernel/Kbuild
 +++ b/kernel/Kbuild
 @@ -6,21 +6,9 @@ kernelsu-objs += feature/mount_hide.o
@@ -69,8 +69,8 @@ index d0a0e14f..a78af6c6 100644
 -$(info -- $(REPO_NAME) version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
 -
 +# Pinned build identity; never query moving GitHub refs during compilation.
-+KSU_VERSION := 41095
-+KSU_VERSION_FULL := v4.2.1-96ceb4a4@onyx
++KSU_VERSION := 41098
++KSU_VERSION_FULL := v4.2.1-29f8b18d@onyx
  ccflags-y += -DKSU_VERSION=$(KSU_VERSION)
  ccflags-y += -DKSU_VERSION_FULL=\"$(KSU_VERSION_FULL)\"
 +$(info -- SukiSU pinned version: $(KSU_VERSION) [$(KSU_VERSION_FULL)])
@@ -1753,7 +1753,7 @@ index 19ae9328..cc03b109 100644
  extern bool ksu_no_custom_rc;
  
 diff --git a/kernel/manager/pkg_observer.c b/kernel/manager/pkg_observer.c
-index ad573bde..cdea8276 100644
+index ad573bde..c3ca8b38 100644
 --- a/kernel/manager/pkg_observer.c
 +++ b/kernel/manager/pkg_observer.c
 @@ -8,6 +8,7 @@
@@ -1764,15 +1764,15 @@ index ad573bde..cdea8276 100644
  #include "klog.h" // IWYU pragma: keep
  #include "manager/throne_tracker.h"
  
-@@ -46,6 +47,8 @@ static void ksu_defer_track_throne(void)
- {
-     struct callback_head *cb;
- 
+@@ -35,6 +36,8 @@ static void ksu_track_throne_tw_func(struct callback_head *cb)
+     if (current->flags & PF_EXITING)
+         return;
+     track_throne(false);
++    // Renew the priority UID filter outside fsnotify locks.
 +    susfs_parse_priority_app_strings();
-+
-     if (current->flags & PF_KTHREAD)
-         goto skipped;
+ }
  
+ // Never scan from the fsnotify handler: fsnotify_mark_srcu and the rename's dir
 diff --git a/kernel/policy/app_profile.c b/kernel/policy/app_profile.c
 index 01f13a2f..11fdbc5f 100644
 --- a/kernel/policy/app_profile.c
@@ -2942,7 +2942,7 @@ index 635ec01c..c7b28b86 100644
  int ksu_sulog_emit_grant_root(int retval, __u32 uid, __u32 euid, gfp_t gfp);
  
 diff --git a/kernel/supercall/dispatch.c b/kernel/supercall/dispatch.c
-index 3ce43fc0..a886c5cd 100644
+index 3bbc7ad3..4207ac83 100644
 --- a/kernel/supercall/dispatch.c
 +++ b/kernel/supercall/dispatch.c
 @@ -8,6 +8,8 @@
