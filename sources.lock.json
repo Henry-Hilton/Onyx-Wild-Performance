@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "bec9c1347472e26d3d7c46cccb7be801a9c9a6b9"
+      "commit": "28db74f6f4692e97006ce9ebd8b19b9cc614b5b7"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "71883de7ab2e2468bbbaf78ef64ac44a33069531"
+      "commit": "ab8c05775122e1363e6cd7809f9ac8375da5092c"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "crdroid": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "bec9c1347472e26d3d7c46cccb7be801a9c9a6b9",
-    "susfs": "ddc373c7edf7745e7dc20f89c17bc3ed42158055",
-    "nomount": "71883de7ab2e2468bbbaf78ef64ac44a33069531",
+    "kernelsu": "28db74f6f4692e97006ce9ebd8b19b9cc614b5b7",
+    "susfs": "c7f670f57b7d43d75066b6657f8aee9cdf580d96",
+    "nomount": "ab8c05775122e1363e6cd7809f9ac8375da5092c",
     "bbg": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,27 +35,27 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2715,
+  "kernel_su_git_version": 2716,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-11-01",
-    "wildkernels": "6052906542503519cfc9f63583fc2bd8b1a56344",
-    "droidspaces": "d8e12c085cf4db44a4934cc8ab5ae905e2c6afe9",
-    "non_kernel_changes": "Updated both root variants, NoMount and SUSFS SELinux integration. Retained manual preinit, CRC bypass, shared ABI fixes and paired KPM ABI v2 backend. Device base and KPM pins unchanged. Reviewed external collection and DroidSpaces changes separately.",
-    "kernelsu": "bec9c1347472e26d3d7c46cccb7be801a9c9a6b9",
-    "patches": "c78291aeb0dca025f21e6b197e0aa4fde42e065d",
+    "date": "2026-11-04",
+    "wildkernels": "c6d44eb9110888ad0cbc8e172d0d64eaa7df3e1e",
+    "droidspaces": "b01a81197f57115da465af6ef196f65a2bd10c27",
+    "non_kernel_changes": "Updated root sources, NoMount and current SUSFS policy handling. Priority UID filtering is now explicitly enabled with its upstream Kconfig option. Retain manual preinit, CRC bypass, module ABI fixes and paired KPM ABI v2 backend. Device base and KPM pins unchanged.",
+    "kernelsu": "28db74f6f4692e97006ce9ebd8b19b9cc614b5b7",
+    "patches": "ee68218dc83b3e488ae619eb82e868859e8eb17d",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
-    "susfs": "ddc373c7edf7745e7dc20f89c17bc3ed42158055",
+    "susfs": "c7f670f57b7d43d75066b6657f8aee9cdf580d96",
     "device_branch_head": "d0881fd7905872a11cd70bc46b37849135aa9a71"
   },
   "variants": {
     "sukisu": {
       "source": {
         "url": "https://github.com/sukisu-ultra/sukisu-ultra.git",
-        "commit": "0fe8d052ab7f9c314f01c9d3451812115e424b69"
+        "commit": "7e4784ee1282abded0dc3bace873a600ef6d5d3f"
       },
-      "git_version": 3935,
-      "version_code": 41120,
+      "git_version": 3958,
+      "version_code": 41143,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
