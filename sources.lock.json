@@ -10,7 +10,7 @@
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "ff745d659551f92869bab317703ec8b77940139b"
+      "commit": "215c7f59c914e8d563d21170a4a1b3e2e7a981e2"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -27,7 +27,7 @@
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
     "kernelsu": "64833c005eca6a8dc3d73ec2d37d84c37e0d9ad2",
     "susfs": "f98f08223bbf469cc0a1542166383d253557fc32",
-    "nomount": "ff745d659551f92869bab317703ec8b77940139b",
+    "nomount": "215c7f59c914e8d563d21170a4a1b3e2e7a981e2",
     "bbg": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -39,11 +39,11 @@
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
     "date": "2026-11-16",
-    "wildkernels": "243bb5a9e72af82251605f1c5c51dab9146a2efd",
+    "wildkernels": "6e55eff8308f9c04cd081c7eb639d546e64239f3",
     "droidspaces": "cdadb9eb5d0f86aacffff60776333e6f6b73a30a",
-    "non_kernel_changes": "Updated KernelSU, SukiSU-Nova, NoMount protocol 23 and SUSFS per-app path filters. Retained device base, manual preinit, CRC bypass and paired KPM backend. The payload repository update only adds a Linux 3.10 patch; shipped payload is unchanged.",
+    "non_kernel_changes": "Updated NoMount protocol 23 with the upstream virtual inode export guard. Root, SUSFS, device and KPM inputs are unchanged. Reviewed WildKernels build workflow and OnePlus patch updates separately.",
     "kernelsu": "64833c005eca6a8dc3d73ec2d37d84c37e0d9ad2",
-    "patches": "10c98a49a212c60eb81a6928625c041f00d0d190",
+    "patches": "31508110bc91e3ace81ab4c4843c05e3a080ef82",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
     "susfs": "f98f08223bbf469cc0a1542166383d253557fc32",
     "device_branch_head": "d0881fd7905872a11cd70bc46b37849135aa9a71"
