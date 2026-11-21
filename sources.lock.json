@@ -6,11 +6,11 @@
     },
     "kernelsu": {
       "url": "https://github.com/tiann/KernelSU.git",
-      "commit": "64833c005eca6a8dc3d73ec2d37d84c37e0d9ad2"
+      "commit": "ff70c90d6de46b80b79d0c74d360d85611797b27"
     },
     "nomount": {
       "url": "https://github.com/maxsteeel/nomount.git",
-      "commit": "215c7f59c914e8d563d21170a4a1b3e2e7a981e2"
+      "commit": "dcd77d03e9912f397a586d7da81694d1628f170e"
     },
     "bbg": {
       "url": "https://github.com/vc-teahouse/Baseband-guard.git",
@@ -25,9 +25,9 @@
     "kernel": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "crdroid": "693e8b0ec1a1caa4b4bd6506cb5e1cf10fe023b1",
     "xiaomi": "58e48d87fdc02f1e2978547f75ea524962217cc5",
-    "kernelsu": "64833c005eca6a8dc3d73ec2d37d84c37e0d9ad2",
+    "kernelsu": "ff70c90d6de46b80b79d0c74d360d85611797b27",
     "susfs": "f98f08223bbf469cc0a1542166383d253557fc32",
-    "nomount": "215c7f59c914e8d563d21170a4a1b3e2e7a981e2",
+    "nomount": "dcd77d03e9912f397a586d7da81694d1628f170e",
     "bbg": "028ff7fd509e2104596da7cc1ef8e6ce2a0c9082",
     "droidspaces": "51f16c2a3d9cc979023583b9c4eb9d1efeb5325e",
     "patches": "41ae18b35d20e0c6ac04116785a4a1089528ae94",
@@ -35,15 +35,15 @@
   },
   "wildkernels_revision": "393b9661d7a15d7024f65ba5433c8377ee40a372",
   "stable_update_revision": "d1cfde2d5d15be14123bdd1689162bd27f995a90",
-  "kernel_su_git_version": 2730,
+  "kernel_su_git_version": 2734,
   "abi_baseline": "crDroidAndroid-17.0-20261003-onyx-v13.0-BETA (6.6.142)",
   "upstream_review": {
-    "date": "2026-11-16",
-    "wildkernels": "6e55eff8308f9c04cd081c7eb639d546e64239f3",
+    "date": "2026-11-21",
+    "wildkernels": "2e82dcc4aabdecc9542cb47df695be85b881bae6",
     "droidspaces": "cdadb9eb5d0f86aacffff60776333e6f6b73a30a",
-    "non_kernel_changes": "Updated NoMount protocol 23 with the upstream virtual inode export guard. Root, SUSFS, device and KPM inputs are unchanged. Reviewed WildKernels build workflow and OnePlus patch updates separately.",
-    "kernelsu": "64833c005eca6a8dc3d73ec2d37d84c37e0d9ad2",
-    "patches": "31508110bc91e3ace81ab4c4843c05e3a080ef82",
+    "non_kernel_changes": "Updated both root sources and NoMount 2.3.1/protocol 23. SukiSU identity follows the pinned upstream formula (30000 + 4008 + 996). Device base, SUSFS, installer, BBG and paired KPM backend remain unchanged.",
+    "kernelsu": "ff70c90d6de46b80b79d0c74d360d85611797b27",
+    "patches": "70c394f16d82b0f85a4f07617630d82dde6d203c",
     "kernelsu_integration": "Latest SUSFS SELinux-hide refactor integrated. Retain tested manual preinit wrapper before UID/su filtering with recoverable failure fallback, rather than installing a second preinit interception path.",
     "susfs": "f98f08223bbf469cc0a1542166383d253557fc32",
     "device_branch_head": "d0881fd7905872a11cd70bc46b37849135aa9a71"
@@ -52,10 +52,10 @@
     "sukisu": {
       "source": {
         "url": "https://github.com/SukiSU-Nova/SukiSU-Nova.git",
-        "commit": "c60f21b9e00e35e898f8d21e0612465b76b9beec"
+        "commit": "1439545f12bffe0263690ba862139b70ee5f20cf"
       },
-      "git_version": 4001,
-      "version_code": 30000,
+      "git_version": 4008,
+      "version_code": 35004,
       "kpm": true,
       "integration": "Shared SUSFS integration, ABI fixes and manual preinit port; upstream built-in KPM loader enabled only for this variant."
     }
